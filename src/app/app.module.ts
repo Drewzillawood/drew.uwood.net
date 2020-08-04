@@ -10,13 +10,18 @@ import { AppComponent } from './app.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { MenuComponent } from './toolbar/menu/menu.component';
 import { SettingsComponent } from './toolbar/settings/settings.component';
+import { AboutMeComponent } from './toolbar/settings/about-me/about-me.component';
+import {AppRoutingModule} from './app-routing.module';
+import { ContactMeComponent } from './toolbar/settings/contact-me/contact-me.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ToolbarComponent,
     MenuComponent,
-    SettingsComponent
+    SettingsComponent,
+    AboutMeComponent,
+    ContactMeComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +29,8 @@ import { SettingsComponent } from './toolbar/settings/settings.component';
     MatButtonModule,
     MatMenuModule,
     MatIconModule,
-    MatToolbarModule
+    MatToolbarModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
