@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { MatButtonModule } from '@angular/material';
+import {MatButtonModule, MatCardModule, MatExpansionModule} from '@angular/material';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -30,7 +30,9 @@ import { ContactMeComponent } from './toolbar/settings/contact-me/contact-me.com
     MatMenuModule,
     MatIconModule,
     MatToolbarModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatCardModule,
+    MatExpansionModule
   ],
   providers: [],
   bootstrap: [AppComponent]

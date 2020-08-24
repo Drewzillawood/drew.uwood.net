@@ -1,72 +1,12 @@
 <div class="content">
-  <div class="row">
-    <div class="mat-h1">Career Objective</div>
-    <div class="mat-body-2">
-      Experienced Software Associate with a demonstrated history of working in the computer software industry. Skilled in Java, SQL, MVC/MVP Frameworks and Full-Stack Development. Eager to pursue new opportunities to further my understanding of application and web development.
-    </div>
-  </div>
-  <div class="row">
-    <div class="mat-h1">Professional Experience</div>
-    <ul>
-      <li>5 years of Java experience and Object Oriented Design, 2 years in professional environment</li>
-      <li>3 years of C development in personal and scholastic pursuits</li>
-      <li>3 years SQL experience, 2  years professional and some T-SQL</li>
-      <li>2 years of RESTful API development, maintenance and implementation</li>
-      <li>2 years with RegEx and parsing user input</li>
-      <li>2 years developing in the GWT Framework</li>
-      <li>2 years of experience in the Web Development Life Cycle and Agile workflow</li>
-      <li>2 years of experience with HTML, UiBinder, and MVP concepts</li>
-      <li>2 years of professional source control and workflow tools including Git, Subversion, Stack, Crucible, Jira, Confluence</li>
-    </ul>
-  </div>
-  <div class="row">
-    <div class="mat-h1">Additional Skills</div>
-    <ul>
-      <li>Angular, Spring, .NET, Micro Services</li>
-      <li>C#, PHP, AJAX, jQuery</li>
-      <li>Dependency Injection (Guice), SOAP</li>
-      <li>Intellij, Datagrip, Microsoft SQL Server, Eclipse, VS Code, Visual Studio, Postman</li>
-    </ul>
-  </div>
-  <div class="row">
-    <div class="mat-h1">Work Experience</div>
-    <ul>
-      <li>
-        NISC (National Information Solutions Cooperative)
-        Software Associate May 2018 – October 2019
-        <ul>
-          <li>Worked with a team of six utilizing the GWT framework, used Java, RESTful API, and SQL to deploy end-to-end features for our CSR-Portal website.</li>
-          <li>Maintained and updated our backend, which was written in Java, to submit and retrieve JSON objects interpreted either through an Enterprise BEAN or a ResultSet.</li>
-          <li>Seamlessly checked in code to the single branch of our Java backend after critical peer review and extensive JUnit testing.</li>
-          <li>Managed sensitive timing of code commits to respect server side and client side compatibility between releases.</li>
-          <li>Monitored backend, micro-services, and front end for necessary revision updates to Spring and/or ANT builds and configuration files.</li>
-          <li>Dynamically handled project demands outside of standalone projects. Integrated micro-services locally into front end project to accurately and quickly identify issues.</li>
-        </ul>
-      </li>
-      <li>
-        Iowa State University
-        Teaching Assistant January 2017 – May 2019
-        <ul>
-          <li>Instructed class of 30-50 students in the basics of Object Oriented programming and design</li>
-          <li>Grade, critique and provide expert level feedback on 3 programming assignments, 3 exams and 10 labs each semester</li>
-          <li>Worked with students varying from complete beginner to rivaling my own understanding, and adapted teaching methods accordingly.</li>
-        </ul>
-      </li>
-      <li>
-        Optum
-        Technology Development Intern May 2017 – August 2017
-        <ul>
-          <li>Joined an active development team and partook in their Agile workflow with standups each morning to communicate our tasks with the Scrum master.</li>
-          <li>Introduced to Visual Studio, checking out tasks with Git and committing changes to be reviewed in TFS.</li>
-        </ul>
-      </li>
-    </ul>
-  </div>
-  <div class="row">
-    <div class="mat-h1">References</div>
-    <ul>
-      <li>Steve Kautz, ISU Computer Science Professor and Mentor – (515) 294-4183</li>
-      <li>Bronson Mayse, NISC Software Specialist and Coworker – (319) 855-0513</li>
-    </ul>
-  </div>
+  <mat-accordion>
+    <mat-expansion-panel hideToggle *ngFor="let section of sections">
+      <mat-expansion-panel-header>
+        <mat-panel-title>{{ section.sectionTitle }}</mat-panel-title>
+      </mat-expansion-panel-header>
+      <ul>
+        <li *ngFor="let content of section.sectionContent">{{ content }}</li>
+      </ul>
+    </mat-expansion-panel>
+  </mat-accordion>
 </div>
