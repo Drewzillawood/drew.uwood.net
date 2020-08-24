@@ -7,6 +7,7 @@ import {AppRoutingModule} from './app-routing.module';
 import { HeaderComponent } from './header/header.component';
 import { SuperHeaderComponent } from './super-header/super-header.component';
 import { ContentComponent } from './content/content.component';
+import {MatGridListModule} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { ContentComponent } from './content/content.component';
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    MatGridListModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
