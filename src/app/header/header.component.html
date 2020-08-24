@@ -1,1 +1,9 @@
-<p>header works!</p>
+<mat-grid-list cols="12" rowHeight="60px">
+  <mat-grid-tile
+    *ngFor="let nav of navButtons"
+    [colspan]="nav.cols"
+    [rowspan]="nav.rows"
+  >
+    {{ nav.text }}
+  </mat-grid-tile>
+</mat-grid-list>
