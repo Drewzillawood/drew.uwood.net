@@ -1,6 +1,27 @@
 :host {
   display: block;
   background-color: mediumpurple;
+  height: 40px;
+  margin: 0;
+}
+:host .container, :host .row {
+  height: 100%;
+}
+
+.container {
+  display: inline-block;
+  max-width: unset;
+}
+.container .col-4, .container .nav-button {
+  text-align: center;
+}
+.container .col-4 span, .container .nav-button span {
+  display: inline-block;
+  margin-top: 8px;
+}
+.container .col-4.left, .container .col-4.right, .container .nav-button.left, .container .nav-button.right {
+  border-left-style: solid;
+  border-right-style: solid;
 }
 
 /*# sourceMappingURL=header.component.css.map */
