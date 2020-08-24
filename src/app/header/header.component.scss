@@ -1,4 +1,29 @@
 :host {
   display: block;
   background-color: mediumpurple;
+  height: 40px;
+  margin: 0;
+
+  .container, .row {
+    height: 100%;
+  }
+}
+
+.container {
+  display: inline-block;
+  max-width: unset;
+
+  .col-4, .nav-button {
+    text-align: center;
+
+    span {
+      display: inline-block;
+      margin-top: 8px;
+    }
+
+    &.left, &.right {
+      border-left-style: solid;
+      border-right-style: solid;
+    }
+  }
 }
