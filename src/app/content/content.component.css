@@ -1,5 +1,5 @@
-app-i-am {
-  display: block;
+:host {
+  width: 100%;
 }
 
 /*# sourceMappingURL=content.component.css.map */
