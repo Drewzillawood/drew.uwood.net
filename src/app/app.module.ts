@@ -9,6 +9,7 @@ import { SuperHeaderComponent } from './super-header/super-header.component';
 import { ContentComponent } from './content/content.component';
 import {MatCardModule, MatGridListModule} from '@angular/material';
 import { SectionContentComponent } from './content/section-content/section-content.component';
+import { IntroductionComponent } from './content/introduction/introduction.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { SectionContentComponent } from './content/section-content/section-conte
     SuperHeaderComponent,
     ContentComponent,
     SectionContentComponent,
+    IntroductionComponent,
   ],
   imports: [
     BrowserModule,
