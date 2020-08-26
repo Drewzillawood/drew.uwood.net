@@ -1,17 +1,37 @@
-/* Error: Can't find stylesheet to import.
- *   ,
- * 1 | @use './src/styles.scss';
- *   | ^^^^^^^^^^^^^^^^^^^^^^^^
- *   '
- *   section-content.component.scss 1:1  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
+:host {
+  margin-top: 8px;
+  margin-bottom: 10px;
+  padding: 1.8em 1.8em 1.8em 1.8em;
   display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Can't find stylesheet to import.\a   \2577 \a 1 \2502  @use './src/styles.scss';\d\a   \2502  ^^^^^^^^^^^^^^^^^^^^^^^^\a   \2575 \a   section-content.component.scss 1:1  root stylesheet";
 }
+
+h3 {
+  color: #bababb;
+}
+
+.dot {
+  height: 25px;
+  width: 25px;
+  background-color: #008eb5;
+  border-radius: 50%;
+  display: inline-block;
+}
+.dot, .dot .dot-container {
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.section-content {
+  margin-top: 8px;
+  margin-bottom: 10px;
+  padding: 1.8em 1.8em 1.8em 1.8em;
+  display: block;
+  border-radius: 10px;
+  box-shadow: 0 1px 3px 0 #1f2426;
+}
+
+/*# sourceMappingURL=section-content.component.css.map */
