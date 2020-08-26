@@ -1,4 +1,12 @@
 <div class="row">
-  <h3 *ngIf="sectionContent.header != null">{{ sectionContent.header }}</h3>
-  <span>{{ sectionContent.content }}</span>
+  <div class="col-12">
+    <h3 *ngIf="sectionContent.header != null">{{ sectionContent.header }}</h3>
+  </div>
+  <ul>
+    <li
+      *ngFor="let subContent of sectionContent.content"
+    >
+      {{ subContent }}
+    </li>
+  </ul>
 </div>
