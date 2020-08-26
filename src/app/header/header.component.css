@@ -1,27 +1,26 @@
 :host {
   display: block;
   background-color: mediumpurple;
-  height: 40px;
+  width: 100%;
   margin: 0;
 }
-:host .container, :host .row {
-  height: 100%;
-}
 
-.container {
-  display: inline-block;
-  max-width: unset;
-}
-.container .col-4, .container .nav-button {
+.container .row .nav-button {
   text-align: center;
 }
-.container .col-4 span, .container .nav-button span {
-  display: inline-block;
-  margin-top: 8px;
+.container .row .nav-button span {
+  display: block;
+  margin-top: 10%;
+  margin-bottom: 10%;
 }
-.container .col-4.left, .container .col-4.right, .container .nav-button.left, .container .nav-button.right {
+.container .row .nav-button.left, .container .row .nav-button.right {
   border-left-style: solid;
   border-right-style: solid;
+}
+.container .row .nav-button.left span, .container .row .nav-button.right span {
+  display: block;
+  margin-top: 10%;
+  margin-bottom: 10%;
 }
 
 /*# sourceMappingURL=header.component.css.map */

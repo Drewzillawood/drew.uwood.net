@@ -1,29 +1,32 @@
 :host {
   display: block;
   background-color: mediumpurple;
-  height: 40px;
+  width: 100%;
   margin: 0;
-
-  .container, .row {
-    height: 100%;
-  }
 }
 
 .container {
-  display: inline-block;
-  max-width: unset;
+  .row {
 
-  .col-4, .nav-button {
-    text-align: center;
+    .nav-button {
+      text-align: center;
 
-    span {
-      display: inline-block;
-      margin-top: 8px;
-    }
+      span {
+        display: block;
+        margin-top: 10%;
+        margin-bottom: 10%
+      }
 
-    &.left, &.right {
-      border-left-style: solid;
-      border-right-style: solid;
+      &.left, &.right {
+        border-left-style: solid;
+        border-right-style: solid;
+
+        span {
+          display: block;
+          margin-top: 10%;
+          margin-bottom: 10%
+        }
+      }
     }
   }
 }
