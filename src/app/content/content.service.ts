@@ -5,14 +5,6 @@ import {SectionContentsModel} from './model/section-contents.model';
 export class ContentService {
   private contents: SectionContentsModel[] = [
     {
-      header: null,
-      content: [
-        `Experienced Software Associate with a demonstrated history of working in the computer software industry.
-         Skilled in Java, SQL, MVC/MVP Frameworks and Full-Stack Development. Eager to pursue new opportunities to further
-         my understanding of application and web development.`
-      ]
-    },
-    {
       header: 'Professional Experience',
       content: [
         '5 years of Java experience and Object Oriented Design, 2 years in professional environment',
