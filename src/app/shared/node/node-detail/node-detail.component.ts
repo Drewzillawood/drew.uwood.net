@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, ViewChild} from '@angular/core';
+import {NodeDetailDirective} from './node-detail.directive';
 
 @Component({
   selector: 'app-node-detail',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./node-detail.component.scss']
 })
 export class NodeDetailComponent {
+  @ViewChild(NodeDetailDirective, { static: false }) detailContent: NodeDetailDirective;
 
   constructor() { }
 }

@@ -1,4 +1,5 @@
-import {Component, Input, OnInit, Output} from '@angular/core';
+import {Component, ViewChild} from '@angular/core';
+import {NodeHeadDirective} from './node-head.directive';
 
 @Component({
   selector: 'app-node-head',
@@ -6,6 +7,7 @@ import {Component, Input, OnInit, Output} from '@angular/core';
   styleUrls: ['./node-head.component.scss']
 })
 export class NodeHeadComponent {
+  @ViewChild(NodeHeadDirective, { static: false }) headerContent: NodeHeadDirective;
 
   constructor() { }
 }

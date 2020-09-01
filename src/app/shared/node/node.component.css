@@ -1,3 +1,8 @@
-
+:host {
+  display: block;
+  max-width: 960px;
+  width: 100%;
+  margin: auto;
+}
 
 /*# sourceMappingURL=node.component.css.map */
