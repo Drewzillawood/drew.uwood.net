@@ -4,12 +4,14 @@ import {NodeDetailComponent} from './node-detail/node-detail.component';
 import {NodeComponent} from './node.component';
 import {NodeHeadDirective} from './node-head/node-head.directive';
 import {NodeDetailDirective} from './node-detail/node-detail.directive';
+import {NodeDirective} from './node.directive';
 
 @NgModule({
   declarations: [
     NodeComponent,
     NodeHeadComponent,
     NodeDetailComponent,
+    NodeDirective,
     NodeHeadDirective,
     NodeDetailDirective
   ],
@@ -20,6 +22,7 @@ import {NodeDetailDirective} from './node-detail/node-detail.directive';
     NodeComponent,
     NodeHeadComponent,
     NodeDetailComponent,
+    NodeDirective,
     NodeHeadDirective,
     NodeDetailDirective
   ]

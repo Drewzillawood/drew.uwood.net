@@ -1,5 +1,4 @@
-import {Component, ViewChild} from '@angular/core';
-import {NodeModel} from './model/node.model';
+import {AfterViewInit, Component, ComponentFactoryResolver, ViewChild, ViewContainerRef} from '@angular/core';
 import {NodeHeadComponent} from './node-head/node-head.component';
 import {NodeDetailComponent} from './node-detail/node-detail.component';
 
@@ -8,16 +7,21 @@ import {NodeDetailComponent} from './node-detail/node-detail.component';
   templateUrl: './node.component.html',
   styleUrls: ['./node.component.scss']
 })
-export class NodeComponent {
-  @ViewChild(NodeHeadComponent, { static: false }) head: NodeHeadComponent;
-  @ViewChild(NodeDetailComponent, { static: false }) body: NodeDetailComponent;
+export class NodeComponent implements AfterViewInit {
+  @ViewChild('nodeHead', { read: ViewContainerRef }) headRef;
+  @ViewChild('nodeDetail', { read: ViewContainerRef }) detailRef;
 
-  node: NodeModel = {
-    next: null,
-    prev: null,
-    head: this.head,
-    body: this.body
-  };
+  constructor(private componentFactory: ComponentFactoryResolver) { }
 
-  constructor() { }
+  ngAfterViewInit(): void {
+    const componentHeadFactory = this.componentFactory.resolveComponentFactory(NodeHeadComponent);
+    const headHost = this.headRef;
+    headHost.clear();
+    headHost.createComponent(componentHeadFactory);
+
+    const componentDetailFactory = this.componentFactory.resolveComponentFactory(NodeDetailComponent);
+    const detailHost = this.detailRef;
+    detailHost.clear();
+    detailHost.createComponent(componentDetailFactory);
+  }
 }

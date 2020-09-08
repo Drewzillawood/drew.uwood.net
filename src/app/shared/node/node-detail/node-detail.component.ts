@@ -1,4 +1,4 @@
-import {Component, ComponentFactoryResolver, OnInit, ViewChild} from '@angular/core';
+import {Component, ComponentFactoryResolver, ViewChild} from '@angular/core';
 import {NodeDetailDirective} from './node-detail.directive';
 
 @Component({
@@ -6,15 +6,15 @@ import {NodeDetailDirective} from './node-detail.directive';
   templateUrl: './node-detail.component.html',
   styleUrls: ['./node-detail.component.scss']
 })
-export class NodeDetailComponent implements OnInit {
-  @ViewChild(NodeDetailDirective, { static: false }) detailHost: NodeDetailDirective;
+export class NodeDetailComponent {
+  // @ViewChild(NodeDetailDirective, { static: false }) detailHost: NodeDetailDirective;
 
   constructor(private componentFactory: ComponentFactoryResolver) { }
 
-  ngOnInit(): void {
-    const componentFactory = this.componentFactory.resolveComponentFactory(NodeDetailComponent);
-    const host = this.detailHost.viewContainerRef;
-    host.clear();
-    host.createComponent(componentFactory);
+  deploy(): void {
+    // const componentFactory = this.componentFactory.resolveComponentFactory(NodeDetailComponent);
+    // const host = this.detailHost.viewContainerRef;
+    // host.clear();
+    // host.createComponent(componentFactory);
   }
 }
