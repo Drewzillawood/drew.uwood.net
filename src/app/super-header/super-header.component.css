@@ -36,4 +36,18 @@ h1 {
   box-shadow: 0 1px 3px 0 #1f2426;
 }
 
+.line {
+  width: 15px;
+  background-color: #008eb5;
+  display: inline-block;
+}
+.line, .line .line-container {
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
 /*# sourceMappingURL=super-header.component.css.map */

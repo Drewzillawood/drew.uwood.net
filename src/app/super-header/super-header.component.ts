@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, ElementRef, HostBinding, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-super-header',
@@ -6,10 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./super-header.component.scss']
 })
 export class SuperHeaderComponent implements OnInit {
+  defaultHeight: string;
 
-  constructor() { }
+  constructor(private elRef: ElementRef) { }
 
   ngOnInit() {
+    this.defaultHeight = this.elRef.nativeElement.parentElement.offsetHeight;
   }
-
 }
