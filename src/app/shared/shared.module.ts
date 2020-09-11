@@ -2,11 +2,15 @@ import {NgModule} from '@angular/core';
 import { LineComponent } from './line/line.component';
 import { DotComponent } from './dot/dot.component';
 import {CommonModule} from '@angular/common';
+import { ConnectorComponent } from './connector/connector.component';
+import { ConnectorDirective } from './connector/connector.directive';
 
 @NgModule({
   declarations: [
     LineComponent,
-    DotComponent
+    DotComponent,
+    ConnectorComponent,
+    ConnectorDirective
   ],
   imports: [
     CommonModule
@@ -14,7 +18,9 @@ import {CommonModule} from '@angular/common';
   exports: [
     LineComponent,
     DotComponent,
-    CommonModule
+    CommonModule,
+    ConnectorComponent,
+    ConnectorDirective
   ]
 })
 export class SharedModule {}
