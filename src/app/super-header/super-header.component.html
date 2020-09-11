@@ -5,14 +5,16 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-1">
-      <app-dot #start></app-dot>
+      <app-dot
+        [down]="25"
+        #start
+      ></app-dot>
       <app-line></app-line>
     </div>
     <div class="col-sm-11 detail">
       <div class="row">
         <div class="col-sm-2">
           <app-dot #end></app-dot>
-          <app-line></app-line>
         </div>
         <div class="col-sm-10">
           <div class="row section-content">

@@ -1,4 +1,4 @@
-import {Component, ElementRef, OnInit} from '@angular/core';
+import {Component, ElementRef, HostBinding, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-dot',
@@ -7,9 +7,15 @@ import {Component, ElementRef, OnInit} from '@angular/core';
 })
 export class DotComponent implements OnInit {
 
-  constructor(public elRef: ElementRef) { }
+  @HostBinding('style.top.%') top: number;
+  @HostBinding('style.bottom.%') bottom: number;
 
-  ngOnInit(): void {
+  constructor(public elRef: ElementRef) {
+
   }
 
+  ngOnInit(): void {
+    this.top = 50;
+    this.bottom = 50;
+  }
 }
