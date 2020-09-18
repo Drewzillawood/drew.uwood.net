@@ -1,21 +1,22 @@
-import {Component, ElementRef, HostBinding, OnInit} from '@angular/core';
+import {Component, ElementRef, Input} from '@angular/core';
 
 @Component({
   selector: 'app-dot',
   templateUrl: './dot.component.html',
   styleUrls: ['./dot.component.scss']
 })
-export class DotComponent implements OnInit {
+export class DotComponent {
 
-  @HostBinding('style.top.%') top: number;
-  @HostBinding('style.bottom.%') bottom: number;
-
-  constructor(public elRef: ElementRef) {
-
+  @Input() set offset(y: number) {
+    this.setOffset(y);
   }
 
-  ngOnInit(): void {
-    this.top = 50;
-    this.bottom = 50;
+  constructor(public elRef: ElementRef) {
+    this.setOffset(50);
+  }
+
+  setOffset(y: number) {
+    this.elRef.nativeElement.style.setProperty('top', `${y}%`);
+    this.elRef.nativeElement.style.setProperty('bottom', `${100 - y}%`);
   }
 }

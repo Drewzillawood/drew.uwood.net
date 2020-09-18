@@ -3,18 +3,12 @@ import { LineComponent } from './line/line.component';
 import { DotComponent } from './dot/dot.component';
 import {CommonModule} from '@angular/common';
 import { ConnectorComponent } from './connector/connector.component';
-import { ConnectorDirective } from './connector/connector.directive';
-import {ShiftUpDirective} from './dot/shift-up.directive';
-import {ShiftDownDirective} from './dot/shift-down.directive';
 
 @NgModule({
   declarations: [
     LineComponent,
     DotComponent,
     ConnectorComponent,
-    ConnectorDirective,
-    ShiftUpDirective,
-    ShiftDownDirective
   ],
   imports: [
     CommonModule
@@ -24,9 +18,7 @@ import {ShiftDownDirective} from './dot/shift-down.directive';
     DotComponent,
     CommonModule,
     ConnectorComponent,
-    ConnectorDirective,
-    ShiftUpDirective,
-    ShiftDownDirective
+    DotComponent,
   ]
 })
 export class SharedModule {}
