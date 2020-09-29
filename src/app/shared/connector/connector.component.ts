@@ -1,7 +1,6 @@
-import {AfterViewInit, Component, ElementRef, Input, OnInit} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, Input} from '@angular/core';
 import {GridService} from '../grid-utility/grid.service';
 import {CoordinateModel} from '../grid-utility/coordinate.model';
-import {VectorModel} from '../grid-utility/vector.model';
 
 @Component({
   selector: 'app-connector',
