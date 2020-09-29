@@ -1,6 +1,11 @@
 :host {
-  background-color: #008eb5;
-  z-index: 500;
+  height: 100%;
+  width: 960px;
   position: absolute;
-  width: 10px;
+
+  svg {
+    height: 100%;
+    width: 100%;
+    fill: none;
+  }
 }

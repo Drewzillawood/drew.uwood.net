@@ -1,6 +1,7 @@
-import {AfterViewInit, Component, ElementRef, Input} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, Input, OnInit} from '@angular/core';
 import {GridService} from '../grid-utility/grid.service';
 import {CoordinateModel} from '../grid-utility/coordinate.model';
+import {VectorModel} from '../grid-utility/vector.model';
 
 @Component({
   selector: 'app-connector',
@@ -14,6 +15,8 @@ export class ConnectorComponent implements AfterViewInit {
 
   p1: ElementRef;
   p2: ElementRef;
+  d: string;
+  width: number;
 
   constructor(private elRef: ElementRef,
               private gridService: GridService) {}
@@ -23,18 +26,15 @@ export class ConnectorComponent implements AfterViewInit {
   }
 
   draw(): void {
-    const p1Rect = this.p1.nativeElement.getBoundingClientRect();
-    const p2Rect = this.p2.nativeElement.getBoundingClientRect();
+    const p1Rect = new CoordinateModel(this.p1.nativeElement.getBoundingClientRect());
+    const p2Rect = new CoordinateModel(this.p2.nativeElement.getBoundingClientRect());
 
     const dx = p2Rect.x - p1Rect.x;
     const dy = p1Rect.y - p2Rect.y;
 
-    // this.elRef.nativeElement.style.setProperty('width', `${p2Rect.x - p1Rect.x}px`);
-    const angle = Math.atan(dx / dy);
-    const distance = this.gridService.distance(new CoordinateModel(p1Rect), new CoordinateModel(p2Rect));
-    this.elRef.nativeElement.style.setProperty('height', `${distance}px`);
-    this.elRef.nativeElement.style.setProperty('top', `${p1Rect.y - dy - 12.5 - 2.5 }px`);
-    this.elRef.nativeElement.style.setProperty('left', `${p1Rect.x + dx / 2 - 2.5 }px`);
-    this.elRef.nativeElement.style.setProperty('transform', `rotate(${angle}rad)`);
+    this.d = `M${52.5} ${p1Rect.y}\
+              c${0} ${-dy / 2},\
+               ${dx} ${-dy / 2},\
+               ${dx} ${-dy}`;
   }
 }
