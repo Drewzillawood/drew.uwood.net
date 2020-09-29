@@ -1,5 +1,4 @@
 import {AfterViewInit, Component, ElementRef, Input} from '@angular/core';
-import {GridService} from '../grid-utility/grid.service';
 import {CoordinateModel} from '../grid-utility/coordinate.model';
 
 @Component({
@@ -17,8 +16,7 @@ export class ConnectorComponent implements AfterViewInit {
   d: string;
   width: number;
 
-  constructor(private elRef: ElementRef,
-              private gridService: GridService) {}
+  constructor() {}
 
   ngAfterViewInit(): void {
     this.draw();
