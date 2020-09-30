@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, ElementRef, Input} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, HostListener, Input} from '@angular/core';
 import {CoordinateModel} from '../grid-utility/coordinate.model';
 
 @Component({
@@ -19,6 +19,10 @@ export class ConnectorComponent implements AfterViewInit {
   constructor() {}
 
   ngAfterViewInit(): void {
+    this.draw();
+  }
+
+  onResize(): void {
     this.draw();
   }
 
