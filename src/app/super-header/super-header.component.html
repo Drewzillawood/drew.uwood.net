@@ -1,9 +1,10 @@
 <div class="container">
   <app-connector
+    [style.height.px]="row.getBoundingClientRect().height"
     [start]="start.elRef"
     [end]="end.elRef"
   ></app-connector>
-  <div class="row">
+  <div class="row" #row>
     <div class="col-sm-1">
       <app-dot
         [offset]="90"
