@@ -21,6 +21,29 @@ body, input[type="text"], button {
   margin: 0;
 }
 
+/* The emerging W3C standard
+   that is currently Firefox-only */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #454442 #2b2b2c;
+}
+
+/* Works on Chrome/Edge/Safari */
+*::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
+*::-webkit-scrollbar-track {
+  background: #454442;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: #656566;
+  border-radius: 20px;
+}
+::-webkit-scrollbar-corner {
+  background: rgba(0,0,0,0);
+}
+
 /* everywhere else */
 * {
   font-family: Arial, Helvetica, sans-serif;
