@@ -29,7 +29,7 @@ export class ConnectorComponent implements AfterViewInit {
     const dx = p2Rect.x - p1Rect.x;
     const dy = p1Rect.y - p2Rect.y;
 
-    this.d = `M${52.5} ${p1Rect.y}\
+    this.d = `M${this.p1.nativeElement.offsetLeft + 12.5} ${this.p1.nativeElement.offsetTop + 12.5}\
               c${0} ${-dy / 2},\
                ${dx} ${-dy / 2},\
                ${dx} ${-dy}`;

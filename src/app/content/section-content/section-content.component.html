@@ -1,20 +1,33 @@
-<div class="container">
-  <div class="row">
-    <div class="col-sm-1">
-      <app-dot></app-dot>
-    </div>
-    <div class="col-sm-11">
-      <div class="row section-content">
-        <div class="col-sm-12">
-          <h3 *ngIf="sectionContent.header != null">{{ sectionContent.header }}</h3>
+<app-connector
+  [start]="start.elRef"
+  [end]="end.elRef"
+></app-connector>
+<div class="row">
+  <div class="col-sm-1">
+    <app-dot
+      [offset]="90"
+      #start
+    ></app-dot>
+    <app-line></app-line>
+  </div>
+  <div class="col-sm-11">
+    <div class="row">
+      <div class="col-sm-2">
+        <app-dot #end></app-dot>
+      </div>
+      <div class="col-sm-10">
+        <div class="row section-content">
+          <div class="col-sm-12">
+            <h3 *ngIf="sectionContent.header != null">{{ sectionContent.header }}</h3>
+          </div>
+          <ul>
+            <li
+              *ngFor="let subContent of sectionContent.content"
+            >
+              {{ subContent }}
+            </li>
+          </ul>
         </div>
-        <ul>
-          <li
-            *ngFor="let subContent of sectionContent.content"
-          >
-            {{ subContent }}
-          </li>
-        </ul>
       </div>
     </div>
   </div>

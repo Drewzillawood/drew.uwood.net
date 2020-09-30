@@ -1,5 +1,13 @@
-<app-introduction></app-introduction>
-<app-section-content
+<div class="container">
+  <div class="row">
+    <app-introduction></app-introduction>
+  </div>
+</div>
+<div
+  class="container"
   *ngFor="let content of contents"
-  [sectionContent] = content
-></app-section-content>
+>
+  <app-section-content
+    [sectionContent] = content
+  ></app-section-content>
+</div>
