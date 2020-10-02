@@ -1,1 +1,13 @@
-<p>header works!</p>
+<div class="row">
+  <img
+    (load)="onImageLoad()"
+    [attr.src]="headerContent.company.imagePath"
+    alt=""
+  >
+</div>
+<div class="row title">
+  {{ headerContent.title }}
+</div>
+<div class="row tenure">
+  {{ headerContent.tenure }}
+</div>

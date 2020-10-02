@@ -1,14 +1,14 @@
 <app-connector
   #connectorStart
-  [style.height.%]="100"
+  [style.height.px]="row.getBoundingClientRect().height"
   [start]="start.elRef"
 ></app-connector>
 <app-connector
   #connectorMid
-  [style.height.%]="100"
+  [style.height.px]="row.getBoundingClientRect().height"
   [start]="end.elRef"
 ></app-connector>
-<div class="row">
+<div class="row" #row>
   <div class="col-sm-1">
     <app-dot
       [offset]="100"
@@ -24,7 +24,7 @@
   <div class="col-sm-11">
     <app-connector
       #connectorEnd
-      [style.height.%]="100"
+      [style.height.px]="row.getBoundingClientRect().height"
     ></app-connector>
     <div
       class="row"
@@ -36,10 +36,13 @@
       <div class="col-sm-11">
         <div class="row section-content">
           <app-work-experience-header
+            (imageLoaded)="drawBranch()"
             [headerContent]="content"
           ></app-work-experience-header>
           <hr>
-          <app-work-experience-detail></app-work-experience-detail>
+          <app-work-experience-detail
+            [detailContent]="content"
+          ></app-work-experience-detail>
         </div>
       </div>
     </div>

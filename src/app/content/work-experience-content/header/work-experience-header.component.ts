@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {WorkExperienceContentModel} from '../model/work-experience-content.model';
 
 @Component({
@@ -9,10 +9,14 @@ import {WorkExperienceContentModel} from '../model/work-experience-content.model
 export class WorkExperienceHeaderComponent implements OnInit {
 
   @Input() headerContent: WorkExperienceContentModel;
+  @Output() imageLoaded = new EventEmitter();
 
   constructor() { }
 
   ngOnInit() {
   }
 
+  onImageLoad() {
+    this.imageLoaded.emit();
+  }
 }
