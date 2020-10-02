@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, ElementRef, HostListener, Input} from '@angular/core';
+import {Component, ElementRef, Input} from '@angular/core';
 import {CoordinateModel} from '../grid-utility/coordinate.model';
 
 @Component({
@@ -6,7 +6,7 @@ import {CoordinateModel} from '../grid-utility/coordinate.model';
   templateUrl: './connector.component.html',
   styleUrls: ['./connector.component.scss']
 })
-export class ConnectorComponent implements AfterViewInit {
+export class ConnectorComponent {
 
   @Input() set start(p1: ElementRef) { this.p1 = p1; }
   @Input() set end(p2: ElementRef) { this.p2 = p2; }
@@ -17,10 +17,6 @@ export class ConnectorComponent implements AfterViewInit {
   width: number;
 
   constructor() {}
-
-  ngAfterViewInit(): void {
-    this.draw();
-  }
 
   onResize(): void {
     this.draw();

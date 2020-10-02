@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {AfterViewInit, Component, Input, ViewChild} from '@angular/core';
 import {SectionContentsModel} from '../model/section-contents.model';
 
 @Component({
@@ -6,10 +6,14 @@ import {SectionContentsModel} from '../model/section-contents.model';
   templateUrl: './section-content.component.html',
   styleUrls: ['./section-content.component.scss']
 })
-export class SectionContentComponent implements OnInit {
+export class SectionContentComponent implements AfterViewInit {
+
+  @ViewChild('connector', { static: false }) connector;
   @Input() sectionContent: SectionContentsModel;
 
   constructor() { }
 
-  ngOnInit() { }
+  ngAfterViewInit() {
+    this.connector.draw();
+  }
 }

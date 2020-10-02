@@ -28,17 +28,6 @@ export class ContentService {
       ]
     },
     {
-      header: 'Work Experience',
-      content: [
-        `NISC (National Information Solutions Cooperative)
-         Software Associate May 2018 – October 2019`,
-         `Iowa State University
-          Teaching Assistant January 2017 – May 2019`,
-        `Optum
-         Technology Development Intern May 2017 – August 2017`
-      ],
-    },
-    {
       header: 'Education',
       content: [
         'Iowa State University',

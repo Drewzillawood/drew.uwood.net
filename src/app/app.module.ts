@@ -8,6 +8,9 @@ import {ContentComponent} from './content/content.component';
 import {IntroductionComponent} from './content/introduction/introduction.component';
 import {SectionContentComponent} from './content/section-content/section-content.component';
 import {BrowserModule} from '@angular/platform-browser';
+import { WorkExperienceContentComponent } from './content/work-experience-content/work-experience-content.component';
+import { WorkExperienceDetailComponent } from './content/work-experience-content/detail/work-experience-detail.component';
+import {WorkExperienceHeaderComponent} from './content/work-experience-content/header/work-experience-header.component';
 
 @NgModule({
   imports: [
@@ -20,7 +23,10 @@ import {BrowserModule} from '@angular/platform-browser';
     SuperHeaderComponent,
     ContentComponent,
     IntroductionComponent,
-    SectionContentComponent
+    SectionContentComponent,
+    WorkExperienceHeaderComponent,
+    WorkExperienceContentComponent,
+    WorkExperienceDetailComponent
   ],
   providers: [
 

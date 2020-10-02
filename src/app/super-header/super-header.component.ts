@@ -1,15 +1,17 @@
-import {Component, ElementRef, OnInit} from '@angular/core';
+import {AfterViewInit, Component, ViewChild} from '@angular/core';
 
 @Component({
   selector: 'app-super-header',
   templateUrl: './super-header.component.html',
   styleUrls: ['./super-header.component.scss']
 })
-export class SuperHeaderComponent implements OnInit {
+export class SuperHeaderComponent implements AfterViewInit {
 
-  constructor(private elRef: ElementRef) { }
+  @ViewChild('connector', { static: false }) connector;
 
-  ngOnInit() {
+  constructor() { }
 
+  ngAfterViewInit(): void {
+    this.connector.draw();
   }
 }

@@ -1,0 +1,47 @@
+<app-connector
+  #connectorStart
+  [style.height.%]="100"
+  [start]="start.elRef"
+></app-connector>
+<app-connector
+  #connectorMid
+  [style.height.%]="100"
+  [start]="end.elRef"
+></app-connector>
+<div class="row">
+  <div class="col-sm-1">
+    <app-dot
+      [offset]="100"
+      #start
+    ></app-dot>
+    <app-dot
+      [style.background-color]="'transparent'"
+      [offset]="0"
+      #end
+    ></app-dot>
+    <app-line></app-line>
+  </div>
+  <div class="col-sm-11">
+    <app-connector
+      #connectorEnd
+      [style.height.%]="100"
+    ></app-connector>
+    <div
+      class="row"
+      *ngFor="let content of contents"
+    >
+      <div class="col-sm-1">
+        <app-dot #mid></app-dot>
+      </div>
+      <div class="col-sm-11">
+        <div class="row section-content">
+          <app-work-experience-header
+            [headerContent]="content"
+          ></app-work-experience-header>
+          <hr>
+          <app-work-experience-detail></app-work-experience-detail>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
