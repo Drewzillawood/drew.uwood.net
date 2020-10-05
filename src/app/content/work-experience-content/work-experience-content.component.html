@@ -2,21 +2,26 @@
   #connectorStart
   [style.height.px]="row.getBoundingClientRect().height"
   [start]="start.elRef"
+  [stroke]="'gray'"
+  [style.z-index]="5"
 ></app-connector>
 <app-connector
   #connectorMid
   [style.height.px]="row.getBoundingClientRect().height"
   [start]="end.elRef"
+  [stroke]="'gray'"
+  [style.z-index]="5"
 ></app-connector>
 <div class="row" #row>
   <div class="col-sm-1">
     <app-dot
       [offset]="100"
+      [style.z-index]="10"
       #start
     ></app-dot>
     <app-dot
-      [style.background-color]="'transparent'"
       [offset]="0"
+      [style.z-index]="10"
       #end
     ></app-dot>
     <app-line></app-line>
@@ -25,13 +30,17 @@
     <app-connector
       #connectorEnd
       [style.height.px]="row.getBoundingClientRect().height"
+      [stroke]="'gray'"
     ></app-connector>
     <div
       class="row"
       *ngFor="let content of contents"
     >
       <div class="col-sm-1">
-        <app-dot #mid></app-dot>
+        <app-dot
+          #mid
+          [style.background-color]="'gray'"
+        ></app-dot>
       </div>
       <div class="col-sm-11">
         <div class="row section-content">

@@ -10,9 +10,11 @@ export class ConnectorComponent {
 
   @Input() set start(p1: ElementRef) { this.p1 = p1; }
   @Input() set end(p2: ElementRef) { this.p2 = p2; }
+  @Input() set stroke(color: string) { this.color = color; }
 
   p1: ElementRef;
   p2: ElementRef;
+  color: string;
   d: string;
   width: number;
 
