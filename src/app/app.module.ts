@@ -33,6 +33,10 @@ import {WorkExperienceHeaderComponent} from './content/work-experience-content/h
   ],
   bootstrap: [
     AppComponent
+  ],
+  entryComponents: [
+    SuperHeaderComponent,
+    HeaderComponent
   ]
 })
 

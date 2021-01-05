@@ -4,14 +4,9 @@
   </head>
 
   <body>
-    <div class="row">
-      <app-super-header></app-super-header>
-    </div>
-    <div class="row">
-      <app-header></app-header>
-    </div>
-    <div class="row">
-      <app-content></app-content>
-    </div>
+    <app-node
+      *ngFor="let component of components"
+      [type]="component"
+    ></app-node>
   </body>
 </html>
