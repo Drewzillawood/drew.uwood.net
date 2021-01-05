@@ -26,6 +26,7 @@ import { BodyComponent } from './node/body/body.component';
     ConnectorComponent,
     DotComponent,
     NodeComponent,
+    GitGraphDotComponent,
   ]
 })
 export class SharedModule {}

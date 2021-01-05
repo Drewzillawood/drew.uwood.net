@@ -13,7 +13,10 @@ import {NodeComponent} from './shared/node/node.component';
 export class AppComponent implements OnInit {
   title = 'drew.uwood.net';
 
-  components = [SuperHeaderComponent];
+  components = [
+    SuperHeaderComponent,
+    IntroductionComponent
+  ];
 
   constructor() { }
 
