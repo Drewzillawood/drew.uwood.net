@@ -13,16 +13,11 @@ import {NodeComponent} from './shared/node/node.component';
 export class AppComponent implements OnInit {
   title = 'drew.uwood.net';
 
-  components = [
-    SuperHeaderComponent,
-    IntroductionComponent
-  ];
+  components = [SuperHeaderComponent];
 
   constructor() { }
 
   ngOnInit(): void {
-    // this.nodeService.createDynamicComponent<SuperHeaderComponent>(SuperHeaderComponent, this.viewRef);
-    // this.nodeService.createDynamicComponent<HeaderComponent>(HeaderComponent, this.viewRef);
-    // this.nodeService.createDynamicComponent<IntroductionComponent>(IntroductionComponent, this.viewRef);
+
   }
 }
