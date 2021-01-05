@@ -2,37 +2,34 @@ import {ApplicationRef, ComponentFactoryResolver, ComponentRef, Injectable, Temp
 import {Node} from './node.model';
 import {NodeComponent} from './node.component';
 
-export abstract class NodeFactory {
-  public abstract create<T>(component: Type<T>): void;
-}
-
 @Injectable({ providedIn: 'any' })
 export class NodeService {
 
-  head: Node = new Node();
+  node: Node = new Node();
 
   constructor(private cfr: ComponentFactoryResolver) {}
 
   public createDynamicComponent<T>(component: Type<T>,
-                                   viewRef: ViewContainerRef): void {
+                                   viewRef: ViewContainerRef): ComponentRef<any> {
     const factory = this.cfr.resolveComponentFactory<T>(component);
-    viewRef.createComponent(factory);
+    return viewRef.createComponent(factory);
   }
 
-  add(componentRef: ComponentRef<any>): void {
-    if (this.head.next === undefined) {
-      this.head.next = this.head;
-      this.head.prev = this.head;
-      this.head.body = componentRef;
+  add(head: ComponentRef<any>, componentRef: ComponentRef<any>): void {
+    if (this.node.next === undefined) {
+      this.node.next = this.node;
+      this.node.prev = this.node;
+      this.node.head = head;
+      this.node.body = componentRef;
     } else {
       const node = new Node(
-        this.head,
-        this.head.prev,
-        null,
+        this.node,
+        this.node.prev,
+        head,
         componentRef
       );
-      this.head.prev.next = node;
-      this.head.prev = node;
+      this.node.prev.next = node;
+      this.node.prev = node;
     }
   }
 }

@@ -3,7 +3,10 @@
     <app-git-graph-dot></app-git-graph-dot>
   </div>
   <div class="col-sm-11">
-    <app-body [type]="type"></app-body>
+    <app-body
+      [type]="type"
+      (componentAssignedEmitter)="onBodyInit($event)"
+    ></app-body>
   </div>
 </div>
 

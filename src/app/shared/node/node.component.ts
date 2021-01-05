@@ -1,17 +1,20 @@
-import {Component, Input, OnInit, Type} from '@angular/core';
+import {Component, ComponentRef, Input, Type, ViewChild} from '@angular/core';
+import {GitGraphDotComponent} from './git-graph-dot/git-graph-dot.component';
+import {NodeService} from './node.service';
 
 @Component({
   selector: 'app-node',
   templateUrl: './node.component.html',
   styleUrls: ['./node.component.scss']
 })
-export class NodeComponent implements OnInit {
+export class NodeComponent {
 
+  @ViewChild(GitGraphDotComponent, { static: false }) head: ComponentRef<GitGraphDotComponent>;
   @Input() type: Type<any>;
 
-  constructor() {
-  }
+  constructor(private nodeService: NodeService) {}
 
-  ngOnInit(): void {
+  onBodyInit($event: ComponentRef<any>): void {
+    this.nodeService.add(this.head, $event);
   }
 }
