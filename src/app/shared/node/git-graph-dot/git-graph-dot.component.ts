@@ -1,4 +1,6 @@
-import {Component, ElementRef, Input, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Subscription} from 'rxjs';
+import {NodeService} from '../node.service';
 
 export enum Position {Default, Top, Bottom}
 
@@ -9,14 +11,19 @@ export enum Position {Default, Top, Bottom}
 })
 export class GitGraphDotComponent implements OnInit {
 
-  constructor(private elRef: ElementRef) { }
+  private moveSubscription: Subscription;
+
+  constructor(private nodeService: NodeService) { }
 
   cy = '50%';
   cx = '50%';
   position: Position;
 
   ngOnInit(): void {
-    this.draw();
+    this.moveSubscription = this.nodeService.positionEmitter.subscribe((position: Position) => {
+      this.position = position;
+      this.draw();
+    });
   }
 
   private draw() {

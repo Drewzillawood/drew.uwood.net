@@ -3,30 +3,25 @@ import {LineComponent} from './line/line.component';
 import {DotComponent} from './dot/dot.component';
 import {CommonModule} from '@angular/common';
 import {ConnectorComponent} from './connector/connector.component';
-import { NodeComponent } from './node/node.component';
-import { GitGraphDotComponent } from './node/git-graph-dot/git-graph-dot.component';
-import { BodyComponent } from './node/body/body.component';
+import {NodeModule} from './node/node.module';
 
 @NgModule({
   declarations: [
     LineComponent,
     DotComponent,
     ConnectorComponent,
-    NodeComponent,
-    GitGraphDotComponent,
-    BodyComponent,
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    NodeModule
   ],
   exports: [
+    NodeModule,
     LineComponent,
     DotComponent,
     CommonModule,
     ConnectorComponent,
-    DotComponent,
-    NodeComponent,
-    GitGraphDotComponent,
+    DotComponent
   ]
 })
 export class SharedModule {}

@@ -1,9 +1,12 @@
-import {ApplicationRef, ComponentFactoryResolver, ComponentRef, Injectable, TemplateRef, Type, ViewContainerRef} from '@angular/core';
+import {ComponentFactoryResolver, ComponentRef, Injectable, Type, ViewContainerRef} from '@angular/core';
 import {Node} from './node.model';
-import {NodeComponent} from './node.component';
+import {Subject} from 'rxjs';
+import {Position} from './git-graph-dot/git-graph-dot.component';
 
-@Injectable({ providedIn: 'any' })
+@Injectable()
 export class NodeService {
+
+  positionEmitter = new Subject<Position>();
 
   node: Node = new Node();
 

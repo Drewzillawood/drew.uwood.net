@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {Specifications} from '../../shared/node/node.model';
 import {Position} from '../../shared/node/git-graph-dot/git-graph-dot.component';
+import {NodeService} from '../../shared/node/node.service';
 
 @Component({
   selector: 'app-introduction',
@@ -15,5 +16,7 @@ export class IntroductionComponent implements Specifications {
                    Skilled in Java, SQL, MVC/MVP Frameworks and Full-Stack Development. Eager to pursue new\
                    opportunities to further my understanding of application and web development.`;
 
-  constructor() { }
+  constructor(private nodeService: NodeService) {
+    this.nodeService.positionEmitter.next(this.position);
+  }
 }

@@ -1,9 +1,6 @@
-import {Component, OnInit, Type, ViewContainerRef} from '@angular/core';
-import {NodeService} from './shared/node/node.service';
+import {Component, OnInit} from '@angular/core';
 import {SuperHeaderComponent} from './super-header/super-header.component';
-import {HeaderComponent} from './header/header.component';
 import {IntroductionComponent} from './content/introduction/introduction.component';
-import {NodeComponent} from './shared/node/node.component';
 
 @Component({
   selector: 'app-root',
