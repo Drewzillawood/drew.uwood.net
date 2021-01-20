@@ -1,6 +1,6 @@
 import {Component, ElementRef, Input, OnInit} from '@angular/core';
 
-export enum Position {Top, Bottom}
+export enum Position {Default, Top, Bottom}
 
 @Component({
   selector: 'app-git-graph-dot',
@@ -13,16 +13,14 @@ export class GitGraphDotComponent implements OnInit {
 
   cy = '50%';
   cx = '50%';
-  pos: Position;
-
-  @Input() set position(pos: Position) { this.pos = pos; }
+  position: Position;
 
   ngOnInit(): void {
     this.draw();
   }
 
   private draw() {
-    switch (this.pos) {
+    switch (this.position) {
       case Position.Top:
         this.cy = '0%';
         break;

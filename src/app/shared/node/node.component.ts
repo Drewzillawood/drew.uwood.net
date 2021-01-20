@@ -18,7 +18,7 @@ export class NodeComponent {
 
   constructor(private nodeService: NodeService) {}
 
-  onBodyInit($event: ComponentRef<any>): void {
+  onBodyInit($event: ComponentRef<Specifications>): void {
     this.nodeService.add(this.head, $event);
   }
 }
