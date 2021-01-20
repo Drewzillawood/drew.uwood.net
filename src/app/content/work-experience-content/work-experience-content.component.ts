@@ -1,7 +1,4 @@
-import {Component, QueryList, ViewChild, ViewChildren} from '@angular/core';
-import {WorkExperienceContentModel} from './model/work-experience-content.model';
-import {DotComponent} from '../../shared/dot/dot.component';
-import {ConnectorComponent} from '../../shared/connector/connector.component';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-work-experience-content',
@@ -9,7 +6,7 @@ import {ConnectorComponent} from '../../shared/connector/connector.component';
   styleUrls: ['./work-experience-content.component.scss']
 })
 export class WorkExperienceContentComponent {
-  contents: WorkExperienceContentModel[] = [
+  contents = [
     {
       company: {
         name: 'J&P Cycles',
@@ -64,22 +61,5 @@ export class WorkExperienceContentComponent {
     }
   ];
 
-  @ViewChild('connectorStart', { static: false }) connectorStart: ConnectorComponent;
-  @ViewChild('connectorMid', { static: false }) connectorMid: ConnectorComponent;
-  @ViewChild('connectorEnd', { static: false }) connectorEnd: ConnectorComponent;
-  @ViewChild('start', { static: false }) start: DotComponent;
-  @ViewChild('end', { static: false }) end: DotComponent;
-  @ViewChildren('mid') dots: QueryList<DotComponent>;
-
   constructor() { }
-
-  drawBranch() {
-    this.connectorStart.p2 = this.dots.last.elRef;
-    this.connectorStart.draw();
-    this.connectorMid.p2 = this.dots.first.elRef;
-    this.connectorMid.draw();
-    this.connectorEnd.p1 = this.dots.first.elRef;
-    this.connectorEnd.p2 = this.dots.last.elRef;
-    this.connectorEnd.draw();
-  }
 }

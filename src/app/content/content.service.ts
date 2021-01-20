@@ -1,9 +1,8 @@
 import {Injectable} from '@angular/core';
-import {SectionContentsModel} from './model/section-contents.model';
 
 @Injectable({ providedIn: 'root' })
 export class ContentService {
-  private contents: SectionContentsModel[] = [
+  private contents = [
     {
       header: 'Professional Experience',
       content: [
@@ -44,8 +43,4 @@ export class ContentService {
   ];
 
   constructor() {}
-
-  getContents(): SectionContentsModel[] {
-    return this.contents;
-  }
 }
