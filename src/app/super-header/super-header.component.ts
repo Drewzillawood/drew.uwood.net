@@ -1,7 +1,7 @@
-import {Component} from '@angular/core';
+import {Component, ViewChild} from '@angular/core';
 import {Specifications} from '../shared/node/node.model';
-import {Position} from '../shared/node/git-graph-dot/git-graph-dot.component';
-import {NodeService} from '../shared/node/node.service';
+import {GitGraphDotComponent, Position} from '../shared/node/git-graph-dot/git-graph-dot.component';
+import {GitGraphDotService} from '../shared/node/git-graph-dot/git-graph-dot.service';
 
 @Component({
   selector: 'app-super-header',
@@ -12,7 +12,7 @@ export class SuperHeaderComponent implements Specifications {
 
   position: Position = Position.Default;
 
-  constructor(private nodeService: NodeService) {
-    this.nodeService.positionEmitter.next(this.position);
+  constructor(private gitGraphDotService: GitGraphDotService) {
+    this.gitGraphDotService.redrawSubject.next(this.position);
   }
 }

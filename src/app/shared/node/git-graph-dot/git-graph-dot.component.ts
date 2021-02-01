@@ -1,6 +1,7 @@
-import {Component, OnInit} from '@angular/core';
-import {Subscription} from 'rxjs';
-import {NodeService} from '../node.service';
+import {AfterViewInit, Component, ElementRef, HostBinding, Input, OnInit, Renderer2, ViewChild} from '@angular/core';
+import {GitGraphDotService, ReferenceList} from './git-graph-dot.service';
+import {NodeSingletonService} from '../node-singleton.service';
+import {CoordinateModel} from '../../grid-utility/coordinate.model';
 
 export enum Position {Default, Top, Bottom}
 
@@ -9,24 +10,31 @@ export enum Position {Default, Top, Bottom}
   templateUrl: './git-graph-dot.component.html',
   styleUrls: ['./git-graph-dot.scss']
 })
-export class GitGraphDotComponent implements OnInit {
+export class GitGraphDotComponent implements OnInit, AfterViewInit {
 
-  private moveSubscription: Subscription;
+  @ViewChild('svg', { static: false }) svg;
+  @ViewChild('point', { static: false }) point;
 
-  constructor(private nodeService: NodeService) { }
+  constructor(private nodeSingletonService: NodeSingletonService,
+              private gitGraphDotService: GitGraphDotService,
+              private renderer: Renderer2) {}
 
   cy = '50%';
   cx = '50%';
   position: Position;
 
   ngOnInit(): void {
-    this.moveSubscription = this.nodeService.positionEmitter.subscribe((position: Position) => {
-      this.position = position;
-      this.draw();
+    this.gitGraphDotService.redrawSubject.subscribe((position: Position) => {
+      this.draw(position);
+    });
+
+    this.gitGraphDotService.positionSubject.subscribe((position: CoordinateModel) => {
+      this.gitGraphDotService.addPosition(position);
     });
   }
 
-  private draw() {
+  draw(position: Position) {
+    this.position = position;
     switch (this.position) {
       case Position.Top:
         this.cy = '0%';
@@ -35,5 +43,24 @@ export class GitGraphDotComponent implements OnInit {
         this.cy = '100%';
         break;
     }
+  }
+
+  ngAfterViewInit(): void {
+    this.gitGraphDotService.positionsSubject.subscribe((positions: ReferenceList) => {
+      const dx = Math.abs(positions.a.x - positions.b[0].x);
+      const dy = positions.b[0].y / 4;
+      const x = this.point.nativeElement.parentElement.getBoundingClientRect().width / 2;
+      const y = this.point.nativeElement.parentElement.getBoundingClientRect().height;
+      const d = `M${x}  ${y}\
+                 c${0}  ${-dy / 2}\
+                  ${dx} ${-dy / 2}\
+                  ${dx} ${-dy}`;
+      this.renderer.setAttribute(this.svg.nativeElement, 'd', d);
+    });
+    this.gitGraphDotService.positionSubject.next(this.getPosition());
+  }
+
+  getPosition(): CoordinateModel {
+    return new CoordinateModel(this.point.nativeElement.getBoundingClientRect());
   }
 }

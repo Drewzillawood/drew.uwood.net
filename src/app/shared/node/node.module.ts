@@ -8,12 +8,11 @@ import {BodyComponent} from './body/body.component';
   declarations: [
     NodeComponent,
     GitGraphDotComponent,
-    BodyComponent
+    BodyComponent,
   ],
   exports: [
     NodeComponent,
-    GitGraphDotComponent,
-    BodyComponent
+    GitGraphDotComponent
   ]
 })
 export class NodeModule { }

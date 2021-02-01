@@ -1,6 +1,6 @@
 import {ComponentRef} from '@angular/core';
 import {CoordinateModel} from '../grid-utility/coordinate.model';
-import {Position} from './git-graph-dot/git-graph-dot.component';
+import {GitGraphDotComponent, Position} from './git-graph-dot/git-graph-dot.component';
 
 export interface NodeModel {
   next?: NodeModel;
