@@ -1,6 +1,5 @@
 import {ComponentRef, Injectable} from '@angular/core';
 import {Node} from './node.model';
-import {GitGraphDotComponent} from './git-graph-dot/git-graph-dot.component';
 
 @Injectable({ providedIn: 'root' })
 export class NodeSingletonService {
@@ -22,18 +21,6 @@ export class NodeSingletonService {
       );
       this.node.prev.next = node;
       this.node.prev = node;
-    }
-  }
-
-  getCoordinatePair(): void {
-    if (this.node !== undefined && this.node.prev !== undefined) {
-      const head: ComponentRef<GitGraphDotComponent> = this.node.head;
-      const instance = head.instance;
-      // const coordinateModel = new CoordinateModel(head.instance.getBoundingClientRect());
-      // return {
-      //   a: coordinateModel,
-      //   b: new CoordinateModel(this.node.next.head.nativeElement.getBoundingClientRect())
-      // };
     }
   }
 }

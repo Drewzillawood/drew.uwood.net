@@ -1,8 +1,3 @@
-export class CoordinateModelPair {
-  constructor(public a: CoordinateModel,
-              public b: CoordinateModel) {}
-}
-
 export class CoordinateModel {
   public x: number;
   public y: number;

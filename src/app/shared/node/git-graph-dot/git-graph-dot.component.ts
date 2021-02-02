@@ -47,11 +47,9 @@ export class GitGraphDotComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void {
     this.gitGraphDotService.positionsSubject.subscribe((positions: ReferenceList) => {
-      const dx = Math.abs(positions.a.x - positions.b[0].x);
-      const dy = positions.b[0].y / 4;
-      const x = this.point.nativeElement.parentElement.getBoundingClientRect().width / 2;
-      const y = this.point.nativeElement.parentElement.getBoundingClientRect().height;
-      const d = `M${x}  ${y}\
+      const dx = positions.a.x + positions.b[0].x + 12.5 + 2.5;
+      const dy = positions.b[0].y / 2;
+      const d = `M${positions.a.x}  ${positions.b[0].y}\
                  c${0}  ${-dy / 2}\
                   ${dx} ${-dy / 2}\
                   ${dx} ${-dy}`;
@@ -61,6 +59,8 @@ export class GitGraphDotComponent implements OnInit, AfterViewInit {
   }
 
   getPosition(): CoordinateModel {
-    return new CoordinateModel(this.point.nativeElement.getBoundingClientRect());
+    const x = this.point.nativeElement.parentElement.getBoundingClientRect().width / 2;
+    const y = this.point.nativeElement.parentElement.getBoundingClientRect().y / 1.5 + 12.5;
+    return new CoordinateModel(x, y);
   }
 }
