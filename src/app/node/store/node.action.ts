@@ -7,5 +7,5 @@ export class MoveLine implements Action {
   constructor(public payload: string) {}
 }
 
-export type DotActions =
+export type NodeActions =
   MoveLine;

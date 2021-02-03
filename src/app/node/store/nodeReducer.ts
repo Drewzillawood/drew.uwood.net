@@ -1,4 +1,4 @@
-import * as DotActions from './dot.action';
+import * as NodeActions from './node.action';
 
 export interface State {
   d: string;
@@ -8,11 +8,11 @@ const initialState: State = {
   d: 'M50 50 l100 100'
 };
 
-export function dotReducer(
+export function nodeReducer(
   state: State = initialState,
-  action: DotActions.DotActions) {
+  action: NodeActions.NodeActions) {
   switch (action.type) {
-    case DotActions.MOVE_LINE:
+    case NodeActions.MOVE_LINE:
       return {
         ...state,
         d: action.payload
