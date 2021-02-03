@@ -6,6 +6,8 @@ import {BrowserModule} from '@angular/platform-browser';
 import {StoreModule} from '@ngrx/store';
 
 import * as fromApp from './store/app.reducer';
+import { NodeHeadComponent } from './node/node-head/node-head.component';
+import { NodeBodyComponent } from './node/node-body/node-body.component';
 
 @NgModule({
   imports: [
@@ -14,7 +16,9 @@ import * as fromApp from './store/app.reducer';
   ],
   declarations: [
     AppComponent,
-    NodeComponent
+    NodeComponent,
+    NodeHeadComponent,
+    NodeBodyComponent
   ],
   providers: [
 
