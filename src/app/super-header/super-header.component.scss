@@ -1,0 +1,19 @@
+:host {
+  display: inline-block;
+  max-width: 960px;
+  width: 100%;
+  margin: 10% auto;
+}
+
+h1 {
+  color: mediumpurple;
+  font-size: 56px;
+}
+
+.section-content {
+  margin-top: 8px;
+  margin-bottom: 10px;
+  padding: 1.8em 1.8em 1.8em 1.8em;
+  border-radius: 10px;
+  box-shadow: 0 1px 3px 0 rgba(31,36,38,1);
+}

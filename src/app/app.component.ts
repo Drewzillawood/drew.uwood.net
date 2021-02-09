@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
-import { IntroductionComponent } from './introduction/introduction.component';
+import {IntroductionComponent} from './introduction/introduction.component';
 import {NodeModel, Position} from './node/model/node.model';
+import {SuperHeaderComponent} from './super-header/super-header.component';
 
 @Component({
   selector: 'app-root',
@@ -11,6 +12,7 @@ export class AppComponent {
   title = 'drew.uwood.net';
 
   nodes: NodeModel[] = [
+    new NodeModel(SuperHeaderComponent, Position.Default),
     new NodeModel(IntroductionComponent, Position.Bottom)
   ];
 }

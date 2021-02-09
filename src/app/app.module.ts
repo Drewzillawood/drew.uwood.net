@@ -9,6 +9,7 @@ import * as fromApp from './store/app.reducer';
 import {environment} from '../environments/environment.prod';
 import {IntroductionComponent} from './introduction/introduction.component';
 import {NodeModule} from './node/node.module';
+import { SuperHeaderComponent } from './super-header/super-header.component';
 
 @NgModule({
   imports: [
@@ -19,7 +20,8 @@ import {NodeModule} from './node/node.module';
   ],
   declarations: [
     AppComponent,
-    IntroductionComponent
+    IntroductionComponent,
+    SuperHeaderComponent
   ],
   providers: [
 
