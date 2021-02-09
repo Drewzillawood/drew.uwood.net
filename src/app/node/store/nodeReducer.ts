@@ -16,7 +16,7 @@ export function nodeReducer(
     case NodeActions.MOVE_LINE:
       return {
         ...state,
-        d: action.payload
+        action
       };
   }
 }
