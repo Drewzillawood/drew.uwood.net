@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {IntroductionComponent} from './introduction/introduction.component';
-import {NodeModel, Position} from './node/model/node.model';
+import {NodeModel, Position} from './node-list/node/model/node.model';
 import {SuperHeaderComponent} from './super-header/super-header.component';
 
 @Component({

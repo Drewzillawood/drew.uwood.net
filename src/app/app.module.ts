@@ -8,15 +8,17 @@ import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 import * as fromApp from './store/app.reducer';
 import {environment} from '../environments/environment.prod';
 import {IntroductionComponent} from './introduction/introduction.component';
-import {NodeModule} from './node/node.module';
-import { SuperHeaderComponent } from './super-header/super-header.component';
+import {SuperHeaderComponent} from './super-header/super-header.component';
+import {NodeListModule} from './node-list/node-list.module';
+import {SharedModule} from './shared/shared.module';
 
 @NgModule({
   imports: [
     BrowserModule,
-    NodeModule,
+    NodeListModule,
+    SharedModule,
     StoreModule.forRoot(fromApp.appReducer),
-    StoreDevtoolsModule.instrument({ logOnly: environment.production })
+    StoreDevtoolsModule.instrument({logOnly: environment.production})
   ],
   declarations: [
     AppComponent,

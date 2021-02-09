@@ -1,7 +1,7 @@
 import {AfterViewInit, Component, Input, OnInit, Renderer2, ViewChild, ViewContainerRef} from '@angular/core';
 import {Store} from '@ngrx/store';
 
-import * as fromApp from '../store/app.reducer';
+import * as fromApp from '../../store/app.reducer';
 import * as NodeActions from './store/node.action';
 import {Subscription} from 'rxjs';
 import {NodeHeadComponent} from './node-head/node-head.component';
