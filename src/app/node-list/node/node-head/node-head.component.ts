@@ -8,6 +8,7 @@ import {Position} from '../model/node.model';
 })
 export class NodeHeadComponent implements AfterViewInit {
 
+  @ViewChild('svg', { static: false }) svg;
   @ViewChild('circle', { static: false }) circle;
   @Input() position: Position;
 

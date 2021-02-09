@@ -1,10 +1,11 @@
-import * as fromNode from '../node-list/node/store/nodeReducer';
 import {ActionReducerMap} from '@ngrx/store';
 
+import * as fromNodeBody from '../node-list/node/node-body/store/node-body.reducer';
+
 export interface AppState {
-  node: fromNode.State;
+  nodeBody: fromNodeBody.State;
 }
 
 export const appReducer: ActionReducerMap<AppState> = {
-  node: fromNode.nodeReducer
+  nodeBody: fromNodeBody.nodeBodyReducer
 };
