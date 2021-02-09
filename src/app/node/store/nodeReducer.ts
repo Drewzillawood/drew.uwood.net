@@ -1,11 +1,12 @@
 import * as NodeActions from './node.action';
+import {NodeModel} from '../model/node.model';
 
 export interface State {
-
+  nodes: NodeModel[];
 }
 
 const initialState: State = {
-  d: 'M50 50 l100 100'
+  nodes: []
 };
 
 export function nodeReducer(

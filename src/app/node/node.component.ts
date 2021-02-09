@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, OnInit, Renderer2, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, Input, OnInit, Renderer2, ViewChild, ViewContainerRef} from '@angular/core';
 import {Store} from '@ngrx/store';
 
 import * as fromApp from '../store/app.reducer';
@@ -6,6 +6,7 @@ import * as NodeActions from './store/node.action';
 import {Subscription} from 'rxjs';
 import {NodeHeadComponent} from './node-head/node-head.component';
 import {NodeBodyComponent} from './node-body/node-body.component';
+import {NodeModel} from './model/node.model';
 
 @Component({
   selector: 'app-node',
@@ -14,22 +15,15 @@ import {NodeBodyComponent} from './node-body/node-body.component';
 })
 export class NodeComponent implements OnInit, AfterViewInit {
 
-  @ViewChild(NodeHeadComponent, { static: false }) head;
-  @ViewChild(NodeBodyComponent, { static: false }) body;
-  subscription: Subscription;
+  @Input() node: NodeModel;
 
-  constructor(private store: Store<fromApp.AppState>,
-              private renderer: Renderer2) { }
+  constructor() { }
 
   ngOnInit(): void {
 
   }
 
   ngAfterViewInit(): void {
-    this.subscription = this.store.select('node').subscribe(stateData => {
-      if (stateData !== undefined) {
-        // this.renderer.setAttribute(this.path.nativeElement, 'd', stateData.d);
-      }
-    });
+
   }
 }
