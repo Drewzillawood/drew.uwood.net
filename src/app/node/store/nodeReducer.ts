@@ -1,7 +1,7 @@
 import * as NodeActions from './node.action';
 
 export interface State {
-  d: string;
+
 }
 
 const initialState: State = {

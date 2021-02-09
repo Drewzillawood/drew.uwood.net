@@ -31,6 +31,5 @@ export class NodeComponent implements OnInit, AfterViewInit {
         // this.renderer.setAttribute(this.path.nativeElement, 'd', stateData.d);
       }
     });
-    this.store.dispatch(new NodeActions.MoveLine('M500 500 l100 100'));
   }
 }
