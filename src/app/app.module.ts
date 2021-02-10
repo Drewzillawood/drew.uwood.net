@@ -5,7 +5,6 @@ import {BrowserModule} from '@angular/platform-browser';
 import {StoreModule} from '@ngrx/store';
 import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 
-import * as fromApp from './store/app.reducer';
 import {environment} from '../environments/environment.prod';
 import {IntroductionComponent} from './introduction/introduction.component';
 import {SuperHeaderComponent} from './super-header/super-header.component';
@@ -17,7 +16,7 @@ import {SharedModule} from './shared/shared.module';
     BrowserModule,
     NodeListModule,
     SharedModule,
-    StoreModule.forRoot(fromApp.appReducer),
+    StoreModule.forRoot({ }),
     StoreDevtoolsModule.instrument({logOnly: environment.production})
   ],
   declarations: [

@@ -1,7 +1,5 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { NodeListComponent } from './node-list.component';
-import {NodeModel} from './node/model/node.model';
+import {NgModule} from '@angular/core';
+import {NodeListComponent} from './node-list.component';
 import {NodeModule} from './node/node.module';
 import {SharedModule} from '../shared/shared.module';
 
