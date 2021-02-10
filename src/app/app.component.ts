@@ -12,7 +12,7 @@ export class AppComponent {
   title = 'drew.uwood.net';
 
   nodes: NodeModel[] = [
-    new NodeModel(SuperHeaderComponent, Position.Default),
-    new NodeModel(IntroductionComponent, Position.Bottom)
+    new NodeModel(SuperHeaderComponent.name, Position.Default),
+    new NodeModel(IntroductionComponent.name, Position.Bottom)
   ];
 }

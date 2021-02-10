@@ -1,6 +1,8 @@
-import * as fromNode from '../node/store/node.reducer';
 import {ActionReducerMap, createFeatureSelector, createReducerFactory, createSelector} from '@ngrx/store';
 import {NodeModel} from '../node/model/node.model';
+
+import * as fromNode from '../node/store/node.reducer';
+import * as NodeListActions from './node-list.actions';
 
 export interface State {
   nodes: NodeModel[];
@@ -12,7 +14,18 @@ export const initialState: State = {
 
 export function nodeListReducer(
   state: State = initialState,
-  action) {
-  return state;
+  action: NodeListActions.NodeListActions) {
+  switch (action.type) {
+    case NodeListActions.ADD_NODE:
+      return {
+        ...state,
+        nodes: [
+          ...state.nodes,
+          action.payload
+        ]
+      };
+    default:
+      return state;
+  }
 }
 

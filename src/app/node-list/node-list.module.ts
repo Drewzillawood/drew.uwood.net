@@ -16,7 +16,7 @@ import * as fromNodeList from './store/node-list.reducer';
   imports: [
     NodeModule,
     SharedModule,
-    StoreModule.forFeature('nodeListModule', fromNodeList.nodeListReducer)
+    // StoreModule.forFeature('nodeListModule', fromNodeList.nodeListReducer)
   ]
 })
 export class NodeListModule { }
