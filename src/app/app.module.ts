@@ -10,6 +10,7 @@ import {IntroductionComponent} from './introduction/introduction.component';
 import {SuperHeaderComponent} from './super-header/super-header.component';
 import {NodeListModule} from './node-list/node-list.module';
 import {SharedModule} from './shared/shared.module';
+import {appReducer} from './store/app.reducer';
 
 @NgModule({
   imports: [
