@@ -1,5 +1,4 @@
 import {NodeHeadModel} from '../model/node-head.model';
-import {createFeatureSelector, createSelector} from '@ngrx/store';
 
 export interface State {
   head: NodeHeadModel;

@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, Input, OnInit, Type} from '@angular/core';
+import {AfterViewInit, Component, Input, OnInit} from '@angular/core';
 import {NodeModel} from './model/node.model';
 
 import * as fromNodeList from '../store/node-list.reducer';

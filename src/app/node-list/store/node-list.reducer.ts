@@ -1,7 +1,5 @@
-import {ActionReducerMap, createFeatureSelector, createReducerFactory, createSelector} from '@ngrx/store';
 import {NodeModel} from '../node/model/node.model';
 
-import * as fromNode from '../node/store/node.reducer';
 import * as NodeListActions from './node-list.actions';
 
 export interface State {

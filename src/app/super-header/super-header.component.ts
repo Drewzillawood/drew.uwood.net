@@ -1,4 +1,4 @@
-import {Component, Type} from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-super-header',
@@ -7,5 +7,4 @@ import {Component, Type} from '@angular/core';
 })
 export class SuperHeaderComponent {
 
-  constructor(public type: Type<any>) {}
 }
