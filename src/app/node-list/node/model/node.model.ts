@@ -1,10 +1,10 @@
-import {Type} from '@angular/core';
+import { Type } from '@angular/core';
 
 export enum Position { Default, Top, Bottom }
 
 export class NodeModel {
-  constructor(
-    public type: Type<any>,
-    public position: Position
-  ) {}
+    constructor(
+        public type: Type<any>,
+        public position: Position
+    ) {}
 }

@@ -1,5 +1,5 @@
-import {Position} from '../../model/node.model';
+import { Position } from '../../model/node.model';
 
 export class NodeHeadModel {
-  constructor(public position: Position) {}
+    constructor(public position: Position) {}
 }
