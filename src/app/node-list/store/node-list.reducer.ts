@@ -22,6 +22,14 @@ export function nodeListReducer(
                     action.payload
                 ]
             };
+        case NodeListActions.ADD_NODES:
+            return {
+                ...state,
+                nodes: [
+                    ...state.nodes,
+                    ...action.payload
+                ]
+            };
         default:
             return state;
     }

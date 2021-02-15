@@ -1,8 +1,9 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { NodeModel } from './node/model/node.model';
+import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 
 import * as fromApp from '../store/app.reducer';
+import { Observable } from 'rxjs';
+import { NodeModel } from './node/model/node.model';
 
 @Component({
     selector: 'app-node-list',
@@ -11,11 +12,11 @@ import * as fromApp from '../store/app.reducer';
 })
 export class NodeListComponent implements OnInit {
 
-    @Input() nodes: NodeModel[];
+    nodes: Observable<{ nodes: NodeModel[] }>;
 
     constructor(private store: Store<fromApp.AppState>) { }
 
     ngOnInit(): void {
-
+        this.nodes = this.store.select('nodeList');
     }
 }
