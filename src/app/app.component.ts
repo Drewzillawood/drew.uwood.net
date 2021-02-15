@@ -8,21 +8,21 @@ import * as fromApp from './store/app.reducer';
 import * as NodeListActions from './node-list/store/node-list.actions';
 
 @Component({
-    selector: 'app-root',
-    templateUrl: './app.component.html',
-    styleUrls: ['./app.component.scss']
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-    title = 'drew.uwood.net';
-
-    nodes: NodeModel[] = [
-        new NodeModel(SuperHeaderComponent, Position.Default),
-        new NodeModel(IntroductionComponent, Position.Bottom)
-    ];
-
-    constructor(private store: Store<fromApp.AppState>) {}
-
-    ngOnInit(): void {
-        this.store.dispatch(new NodeListActions.AddNodes(this.nodes));
-    }
+  title = 'drew.uwood.net';
+  
+  nodes: NodeModel[] = [
+    new NodeModel(SuperHeaderComponent, Position.Default),
+    new NodeModel(IntroductionComponent, Position.Bottom)
+  ];
+  
+  constructor(private store: Store<fromApp.AppState>) {}
+  
+  ngOnInit(): void {
+    this.store.dispatch(new NodeListActions.AddNodes(this.nodes));
+  }
 }

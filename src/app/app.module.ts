@@ -13,22 +13,22 @@ import { SharedModule } from './shared/shared.module';
 import { appReducer } from './store/app.reducer';
 
 @NgModule({
-    imports: [
-        BrowserModule,
-        NodeListModule,
-        SharedModule,
-        StoreModule.forRoot(appReducer),
-        StoreDevtoolsModule.instrument({ logOnly: environment.production })
-    ],
-    declarations: [
-        AppComponent,
-        IntroductionComponent,
-        SuperHeaderComponent
-    ],
-    providers: [],
-    bootstrap: [
-        AppComponent
-    ]
+  imports: [
+    BrowserModule,
+    NodeListModule,
+    SharedModule,
+    StoreModule.forRoot(appReducer),
+    StoreDevtoolsModule.instrument({ logOnly: environment.production })
+  ],
+  declarations: [
+    AppComponent,
+    IntroductionComponent,
+    SuperHeaderComponent
+  ],
+  providers: [],
+  bootstrap: [
+    AppComponent
+  ]
 })
 
 export class AppModule {}

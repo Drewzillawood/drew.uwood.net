@@ -5,17 +5,17 @@ import { NodeBodyComponent } from './node-body/node-body.component';
 import { NodeBodyService } from './node-body/node-body.service';
 
 @NgModule({
-    declarations: [
-        NodeComponent,
-        NodeHeadComponent,
-        NodeBodyComponent
-    ],
-    imports: [],
-    exports: [
-        NodeComponent
-    ],
-    providers: [
-        NodeBodyService
-    ]
+  declarations: [
+    NodeComponent,
+    NodeHeadComponent,
+    NodeBodyComponent
+  ],
+  imports: [],
+  exports: [
+    NodeComponent
+  ],
+  providers: [
+    NodeBodyService
+  ]
 })
 export class NodeModule {}

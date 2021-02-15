@@ -1,15 +1,15 @@
 import { NodeBodyModel } from '../model/node-body.model';
 
 export interface State {
-    head: NodeBodyModel;
+  head: NodeBodyModel;
 }
 
 const initialState: State = {
-    head: null
+  head: null
 };
 
 export function nodeBodyReducer(
-    state: State = initialState,
-    action) {
-    return state;
+  state: State = initialState,
+  action) {
+  return state;
 }

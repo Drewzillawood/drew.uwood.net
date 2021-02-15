@@ -2,12 +2,12 @@ import { ComponentFactoryResolver, ComponentRef, Injectable, Type, ViewContainer
 
 @Injectable()
 export class NodeBodyService {
-
-    constructor(private cfr: ComponentFactoryResolver) {}
-
-    createDynamicComponent<T>(component: Type<T>,
-        viewRef: ViewContainerRef): ComponentRef<any> {
-        const factory = this.cfr.resolveComponentFactory<T>(component);
-        return viewRef.createComponent(factory);
-    }
+  
+  constructor(private cfr: ComponentFactoryResolver) {}
+  
+  createDynamicComponent<T>(component: Type<T>,
+    viewRef: ViewContainerRef): ComponentRef<any> {
+    const factory = this.cfr.resolveComponentFactory<T>(component);
+    return viewRef.createComponent(factory);
+  }
 }
