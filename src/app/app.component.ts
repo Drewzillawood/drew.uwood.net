@@ -12,17 +12,11 @@ import * as NodeListActions from './node-list/store/node-list.actions';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   title = 'drew.uwood.net';
   
   nodes: NodeModel[] = [
     new NodeModel(SuperHeaderComponent, Position.Default),
     new NodeModel(IntroductionComponent, Position.Bottom)
   ];
-  
-  constructor(private store: Store<fromApp.AppState>) {}
-  
-  ngOnInit(): void {
-    this.store.dispatch(new NodeListActions.AddNodes(this.nodes));
-  }
 }

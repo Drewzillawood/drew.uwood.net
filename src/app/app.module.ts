@@ -17,7 +17,7 @@ import { appReducer } from './store/app.reducer';
     BrowserModule,
     NodeListModule,
     SharedModule,
-    StoreModule.forRoot(appReducer),
+    // StoreModule.forRoot(appReducer),
     StoreDevtoolsModule.instrument({ logOnly: environment.production })
   ],
   declarations: [

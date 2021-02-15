@@ -10,17 +10,6 @@ import { Store } from '@ngrx/store';
   templateUrl: './node.component.html',
   styleUrls: ['./node.component.scss']
 })
-export class NodeComponent implements OnInit, AfterViewInit {
-  
+export class NodeComponent {
   @Input() node: NodeModel;
-  
-  constructor(private store: Store<fromNodeList.State>) { }
-  
-  ngOnInit(): void {
-  
-  }
-  
-  ngAfterViewInit(): void {
-    this.store.dispatch(new NodeListActions.AddNode(this.node));
-  }
 }
