@@ -1,9 +1,5 @@
-import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { NodeModel } from './model/node.model';
-
-import * as fromNodeList from '../store/node-list.reducer';
-import * as NodeListActions from '../store/node-list.actions';
-import { Store } from '@ngrx/store';
 
 @Component({
   selector: 'app-node',

@@ -5,6 +5,4 @@ import { Component } from '@angular/core';
   templateUrl: './super-header.component.html',
   styleUrls: ['./super-header.component.scss']
 })
-export class SuperHeaderComponent {
-
-}
+export class SuperHeaderComponent {}

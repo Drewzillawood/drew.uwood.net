@@ -1,11 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { IntroductionComponent } from './introduction/introduction.component';
 import { NodeModel, Position } from './node-list/node/model/node.model';
 import { SuperHeaderComponent } from './super-header/super-header.component';
-import { Store } from '@ngrx/store';
-
-import * as fromApp from './store/app.reducer';
-import * as NodeListActions from './node-list/store/node-list.actions';
 
 @Component({
   selector: 'app-root',

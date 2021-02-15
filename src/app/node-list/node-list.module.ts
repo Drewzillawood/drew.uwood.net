@@ -13,7 +13,6 @@ import { SharedModule } from '../shared/shared.module';
   imports: [
     NodeModule,
     SharedModule
-    // StoreModule.forFeature('nodeListModule', fromNodeList.nodeListReducer)
   ]
 })
 export class NodeListModule {}
