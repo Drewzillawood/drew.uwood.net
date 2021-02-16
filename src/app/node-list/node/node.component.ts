@@ -1,11 +1,15 @@
 import { Component, Input } from '@angular/core';
-import { NodeModel } from './model/node.model';
+import { Node } from './store/node.reducer';
 
 @Component({
   selector: 'app-node',
-  templateUrl: './node.component.html',
+  template: `
+    <div class="row">
+      <app-node-head [position]="node.position"></app-node-head>
+      <app-node-body [type]="node.type"></app-node-body>
+    </div>`,
   styleUrls: ['./node.component.scss']
 })
 export class NodeComponent {
-  @Input() node: NodeModel;
+  @Input() node: Node;
 }

@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, Input, Renderer2, ViewChild } from '@angular/core';
-import { Position } from '../model/node.model';
+import { Position } from '../store/node.reducer';
 
 @Component({
   selector: 'app-node-head',

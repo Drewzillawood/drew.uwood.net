@@ -9,12 +9,15 @@ import { IntroductionComponent } from './introduction/introduction.component';
 import { SuperHeaderComponent } from './super-header/super-header.component';
 import { NodeListModule } from './node-list/node-list.module';
 import { SharedModule } from './shared/shared.module';
+import { StoreModule } from '@ngrx/store';
+import { appReducer } from './store/app.reducer';
 
 @NgModule({
   imports: [
     BrowserModule,
     NodeListModule,
     SharedModule,
+    StoreModule.forRoot(appReducer),
     StoreDevtoolsModule.instrument({ logOnly: environment.production })
   ],
   declarations: [
@@ -27,5 +30,4 @@ import { SharedModule } from './shared/shared.module';
     AppComponent
   ]
 })
-
 export class AppModule {}
