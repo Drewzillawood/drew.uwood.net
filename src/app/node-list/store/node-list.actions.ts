@@ -1,12 +1,12 @@
 import { Action } from '@ngrx/store';
-import { Node } from '../node/store/node.reducer';
+import { Node, State } from '../node/store/node.reducer';
 
-export const SET_NODES = '[Node List] Set Nodes';
+export const INIT_NODES = '[Node List] Set Nodes';
 
 export class SetNodes implements Action {
-  readonly type = SET_NODES;
+  readonly type = INIT_NODES;
   
-  constructor(public payload: Node[]) {}
+  constructor(public payload?: Node[]) {}
 }
 
 export type NodeListActions = SetNodes;

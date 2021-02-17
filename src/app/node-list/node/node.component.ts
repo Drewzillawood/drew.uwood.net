@@ -1,5 +1,10 @@
-import { Component, Input } from '@angular/core';
-import { Node } from './store/node.reducer';
+import { Component, Input, OnInit } from '@angular/core';
+import { Node, Position, State } from './store/node.reducer';
+import { Observable } from 'rxjs';
+import { Store } from '@ngrx/store';
+
+import * as fromNode from './store/node.reducer';
+import { map, switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-node',
@@ -10,6 +15,12 @@ import { Node } from './store/node.reducer';
     </div>`,
   styleUrls: ['./node.component.scss']
 })
-export class NodeComponent {
+export class NodeComponent implements OnInit {
   @Input() node: Node;
+  
+  constructor(private store: Store<fromNode.State>) {}
+  
+  ngOnInit(): void {
+  
+  }
 }

@@ -1,12 +1,26 @@
+import { Node, Position } from '../node/store/node.reducer';
+import { ActionReducerMap } from '@ngrx/store';
+
+import * as fromNode from '../node/store/node.reducer';
 import * as NodeListActions from './node-list.actions';
-import { Node } from '../node/store/node.reducer';
+import { SuperHeaderComponent } from '../../super-header/super-header.component';
+import { IntroductionComponent } from '../../introduction/introduction.component';
 
 export interface State {
   nodes: Node[];
 }
 
 const initialState: State = {
-  nodes: []
+  nodes: [
+    {
+      type: SuperHeaderComponent.name,
+      position: Position.Default
+    },
+    {
+      type: IntroductionComponent.name,
+      position: Position.Bottom
+    }
+  ]
 };
 
 export function nodeListReducer(
@@ -14,7 +28,7 @@ export function nodeListReducer(
   action: NodeListActions.NodeListActions
 ) {
   switch (action.type) {
-    case NodeListActions.SET_NODES:
+    case NodeListActions.INIT_NODES:
       return {
         ...state,
         nodes: [
