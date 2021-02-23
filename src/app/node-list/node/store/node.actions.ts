@@ -1,11 +1,12 @@
-import { Action } from '@ngrx/store';
-import { Node } from '@angular/compiler';
+import { createAction, props } from '@ngrx/store';
+import { Coordinates } from './node.index';
 
-export const SET_NODE = '[Node] Set Node';
+export const SET_NODE_COORDINATES = '[Node] Set Node Coordinates';
 
-export class SetNodeCoordinates implements Action {
-  readonly type = SET_NODE;
-  constructor(public payload: Node) {}
-}
-
-export type NodeActions = SetNodeCoordinates;
+export const setNodeCoordinates = createAction(
+  SET_NODE_COORDINATES,
+  props<{
+    id: number,
+    coordinates: Coordinates
+  }>()
+);

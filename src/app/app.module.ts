@@ -10,14 +10,15 @@ import { SuperHeaderComponent } from './super-header/super-header.component';
 import { NodeListModule } from './node-list/node-list.module';
 import { SharedModule } from './shared/shared.module';
 import { StoreModule } from '@ngrx/store';
-import { appReducer } from './store/app.reducer';
+
+import * as fromNodeList from './node-list/store/node-list.reducer';
 
 @NgModule({
   imports: [
     BrowserModule,
-    NodeListModule,
     SharedModule,
-    StoreModule.forRoot(appReducer),
+    NodeListModule,
+    StoreModule.forRoot({ appState: fromNodeList.nodeListReducer }),
     StoreDevtoolsModule.instrument({ logOnly: environment.production })
   ],
   declarations: [

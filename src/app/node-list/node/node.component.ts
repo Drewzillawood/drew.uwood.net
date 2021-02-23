@@ -1,10 +1,14 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Node, Position, State } from './store/node.reducer';
-import { Observable } from 'rxjs';
+import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { Coordinates, Node, Position } from './store/node.index';
 
-import * as fromNode from './store/node.reducer';
-import { map, switchMap } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
+import * as fromNode from './store/node.index';
+import * as fromNodeHead from './node-head/store/node-head.reducer';
+import * as fromNodeList from '../store/node-list.index';
+import * as NodeAction from './store/node.actions';
+import * as NodeListAction from '../store/node-list.actions';
 
 @Component({
   selector: 'app-node',
@@ -15,12 +19,9 @@ import { map, switchMap } from 'rxjs/operators';
     </div>`,
   styleUrls: ['./node.component.scss']
 })
-export class NodeComponent implements OnInit {
+export class NodeComponent {
   @Input() node: Node;
+  @Input() index: number;
   
-  constructor(private store: Store<fromNode.State>) {}
-  
-  ngOnInit(): void {
-  
-  }
+  constructor() {}
 }
