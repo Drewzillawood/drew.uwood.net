@@ -7,6 +7,7 @@ import { Store } from '@ngrx/store';
 import * as fromNodeList from '../../store/node-list.index';
 import * as NodeActions from './node.actions';
 import * as NodeHeadActions from '../node-head/store/node-head.actions';
+import * as NodeListActions from '../../store/node-list.actions';
 
 @Injectable()
 export class NodeEffects {
@@ -16,7 +17,7 @@ export class NodeEffects {
       ofType(NodeHeadActions.SET_NODE_HEAD_COORDINATES),
       withLatestFrom(this.store.select(fromNodeList.selectNodes)),
       tap(([action]) => {
-        this.store.dispatch(NodeActions.setNodeCoordinates(action));
+        this.store.dispatch(NodeListActions.assignCoordinatesToList(action));
       })
     ),
     { dispatch: false }

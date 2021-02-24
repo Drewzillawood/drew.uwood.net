@@ -21,7 +21,11 @@ export class NodeHeadComponent implements AfterViewInit {
   ngAfterViewInit(): void {
     this.renderer.setAttribute(this.circle.nativeElement, 'cy', this.determinePosition(this.node.position));
     this.store.dispatch(NodeHeadActions.setNodeHeadCoordinates({
-      coordinates: { x: 0, y: 0 }
+      key: this.node.type,
+      coordinates: {
+        x: this.circle.nativeElement.getBoundingClientRect().x,
+        y: this.circle.nativeElement.getBoundingClientRect().y
+      }
     }));
   }
   
