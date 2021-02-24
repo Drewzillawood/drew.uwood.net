@@ -7,7 +7,6 @@ import * as fromNodeHead from '../node-head/store/node-head.reducer';
 import * as NodeActions from './node.actions';
 
 const initialState: fromNode.NodeState = {
-  type: '',
   position: Position.Default
 };
 

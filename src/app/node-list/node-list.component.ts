@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { Node, Position } from './node/store/node.index';
+import { Node, NodeState, Position } from './node/store/node.index';
 import { SuperHeaderComponent } from '../super-header/super-header.component';
 import { IntroductionComponent } from '../introduction/introduction.component';
 
@@ -31,7 +31,16 @@ export class NodeListComponent implements OnInit {
   constructor(private store: Store) {}
   
   ngOnInit(): void {
-    this.store.dispatch(NodeListActions.addNodes(this.nodes));
+    this.store.dispatch(NodeListActions.addNodes(this.castNodeState()));
+  }
+  
+  castNodeState(): { [key: string]: NodeState } {
+    const nodes: { [key: string]: NodeState } = {};
+    const values = Object.entries(this.nodes).values();
+    for (let i = values.next(); !i.done; i = values.next()) {
+      nodes[i.value[0]] = { position: i.value[1].position };
+    }
+    return nodes;
   }
   
   getValues(): Node[] {

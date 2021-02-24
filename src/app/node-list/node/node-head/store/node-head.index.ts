@@ -1,7 +1,4 @@
-export interface Coordinates {
-  x: number;
-  y: number;
-}
+import { Coordinates } from '../../store/node.index';
 
 export interface NodeHeadState {
   coordinates: Coordinates;

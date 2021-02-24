@@ -2,7 +2,6 @@ import { AfterViewInit, Component, Input, Renderer2, ViewChild } from '@angular/
 import { Node, Position } from '../store/node.index';
 import { Store } from '@ngrx/store';
 
-import * as fromNodeHead from './store/node-head.index';
 import * as NodeHeadActions from './store/node-head.actions';
 
 @Component({
