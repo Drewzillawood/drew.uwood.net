@@ -8,11 +8,6 @@ const initialState = {};
 
 export const nodeListReducer = createReducer(
   initialState,
-  on(NodeListActions.addNode, (state: fromNodeList.State, action) => {
-    const val = { ...state };
-    val[action.type] = action[action.type];
-    return val;
-  }),
   on(NodeListActions.addNodes, (state: fromNodeList.State, action: { [key: string]: Node }) => {
     const val = { ...state };
     const values = Object.entries(action).values();

@@ -11,6 +11,10 @@ import { NodeListModule } from './node-list/node-list.module';
 import { SharedModule } from './shared/shared.module';
 import { StoreModule } from '@ngrx/store';
 
+import { EffectsModule } from '@ngrx/effects';
+import { NodeEffects } from './node-list/node/store/node.effects';
+
+import * as fromNode from './node-list/node/store/node.reducer';
 import * as fromNodeList from './node-list/store/node-list.reducer';
 
 @NgModule({
@@ -18,7 +22,11 @@ import * as fromNodeList from './node-list/store/node-list.reducer';
     BrowserModule,
     SharedModule,
     NodeListModule,
-    StoreModule.forRoot({ appState: fromNodeList.nodeListReducer }),
+    StoreModule.forRoot({
+      appState: fromNodeList.nodeListReducer,
+      nodeState: fromNode.nodeReducer
+    }),
+    EffectsModule.forRoot([NodeEffects]),
     StoreDevtoolsModule.instrument({ logOnly: environment.production })
   ],
   declarations: [
