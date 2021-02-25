@@ -14,15 +14,12 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { NodeEffects } from './node-list/node/store/node.effects';
 
-import * as fromNodeList from './node-list/store/node-list.reducer';
-
 @NgModule({
   imports: [
     BrowserModule,
     SharedModule,
     NodeListModule,
     StoreModule.forRoot({
-      appState: fromNodeList.nodeListReducer,
     }),
     EffectsModule.forRoot([NodeEffects]),
     StoreDevtoolsModule.instrument({ logOnly: environment.production })
