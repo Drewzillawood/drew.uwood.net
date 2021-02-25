@@ -1,5 +1,5 @@
 import { createReducer, on } from '@ngrx/store';
-import { Node, NodeState } from '../node/store/node.index';
+import { NodeState } from '../node/store/node.index';
 
 import * as fromNodeList from './node-list.index';
 import * as fromNodeHead from '../node/node-head/store/node-head.reducer';

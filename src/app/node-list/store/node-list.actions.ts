@@ -1,5 +1,5 @@
 import { createAction, props } from '@ngrx/store';
-import { Coordinates, Node, NodeState } from '../node/store/node.index';
+import { Coordinates, NodeState } from '../node/store/node.index';
 
 export const ADD_NODES = '[Node List] Add Nodes';
 export const ASSIGN_COORDINATES_TO_LIST = '[Node List] Assign Coordinates';

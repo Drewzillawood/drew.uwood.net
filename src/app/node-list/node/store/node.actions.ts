@@ -1,5 +1,4 @@
 import { createAction, props } from '@ngrx/store';
-import { Coordinates } from './node.index';
 
 import * as fromNodeHead from '../node-head/store/node-head.index';
 

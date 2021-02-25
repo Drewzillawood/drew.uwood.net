@@ -1,10 +1,9 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Node, NodeState, Position } from './node/store/node.index';
 import { SuperHeaderComponent } from '../super-header/super-header.component';
 import { IntroductionComponent } from '../introduction/introduction.component';
 
-import * as fromNodeList from './store/node-list.index';
 import * as NodeListActions from './store/node-list.actions';
 
 @Component({
