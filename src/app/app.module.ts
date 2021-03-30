@@ -13,16 +13,17 @@ import { StoreModule } from '@ngrx/store';
 
 import { EffectsModule } from '@ngrx/effects';
 import { NodeEffects } from './node-list/node/store/node.effects';
+import { NodeHeadModule } from './node-list/node/node-head/node-head.module';
 
 @NgModule({
   imports: [
     BrowserModule,
     SharedModule,
     NodeListModule,
-    StoreModule.forRoot({
-    }),
+    StoreModule.forRoot({}),
     EffectsModule.forRoot([NodeEffects]),
-    StoreDevtoolsModule.instrument({ logOnly: environment.production })
+    StoreDevtoolsModule.instrument({ logOnly: environment.production }),
+    NodeHeadModule
   ],
   declarations: [
     AppComponent,
