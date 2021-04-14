@@ -8,10 +8,12 @@ import { environment } from '../environments/environment.prod';
 import { StoreModule } from '@ngrx/store';
 import { NodeComponent } from './node/node.component';
 
+import * as fromNode from './node/store/node.reducer';
+
 @NgModule({
   imports: [
     BrowserModule,
-    StoreModule.forRoot({}),
+    StoreModule.forRoot({ node: fromNode.nodeReducer }),
     StoreDevtoolsModule.instrument({ logOnly: environment.production }),
   ],
   declarations: [
