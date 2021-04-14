@@ -6,19 +6,20 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 import { environment } from '../environments/environment.prod';
 import { StoreModule } from '@ngrx/store';
-import { NodeComponent } from './node/node.component';
-
-import * as fromNode from './node/store/node.reducer';
+import { EffectsModule } from '@ngrx/effects';
+import { NodeListModule } from './node-list/node-list.module';
+import { NodeListEffects } from './node-list/store/node-list.effects';
 
 @NgModule({
   imports: [
     BrowserModule,
-    StoreModule.forRoot({ node: fromNode.nodeReducer }),
+    NodeListModule,
+    StoreModule.forRoot({}),
+    EffectsModule.forRoot([NodeListEffects]),
     StoreDevtoolsModule.instrument({ logOnly: environment.production }),
   ],
   declarations: [
-    AppComponent,
-    NodeComponent,
+    AppComponent
   ],
   providers: [
 

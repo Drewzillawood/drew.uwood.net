@@ -1,8 +1,8 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { Store } from '@ngrx/store';
+import { Coordinates } from './store/node.index';
 
 import * as NodeActions from './store/node.actions';
-import { Coordinates } from './store/node.index';
 
 @Component({
   selector: 'app-node',
@@ -10,11 +10,11 @@ import { Coordinates } from './store/node.index';
   styleUrls: ['./node.component.scss']
 })
 export class NodeComponent implements OnInit, AfterViewInit {
-
+  
   @ViewChild('circle') circle;
   
   constructor(private store: Store) { }
-
+  
   ngOnInit(): void {
   
   }
@@ -25,7 +25,7 @@ export class NodeComponent implements OnInit, AfterViewInit {
     const yDiff = (rect.bottom - rect.top) / 2;
     const x = rect.left + xDiff;
     const y = rect.top + yDiff;
-    this.store.dispatch(NodeActions.initializedAction({
+    this.store.dispatch(NodeActions.initialize({
       coordinates: new Coordinates(x, y)
     }));
   }
