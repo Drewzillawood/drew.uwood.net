@@ -10,7 +10,7 @@ const initialState: fromNode.State = {
 
 export const nodeReducer = createReducer(
   initialState,
-  on(NodeActions.initializedAction, (state: fromNode.State, action) => {
+  on(NodeActions.initialize, (state: fromNode.State, action) => {
     return {
       ...state,
       coordinates: action.coordinates

@@ -1,9 +1,9 @@
 import { createAction, props } from '@ngrx/store';
 import { Coordinates } from './node.index';
 
-export const INITIALIZED_ACTION = '[Node] Initialized';
+export const INITIALIZE = '[Node] Initialize';
 
-export const initializedAction = createAction(
-  INITIALIZED_ACTION,
+export const initialize = createAction(
+  INITIALIZE,
   props<{ coordinates: Coordinates }>()
 );
