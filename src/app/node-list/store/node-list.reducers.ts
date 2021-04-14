@@ -10,10 +10,9 @@ const initialState: fromNodeList.State = {
 export const nodeListReducer = createReducer(
   initialState,
   on(NodeListActions.addNode, (state: fromNodeList.State, action) => {
-    const newVar = {
+    return {
       ...state,
       nodes: [...state.nodes, action]
     };
-    return newVar;
   })
 );
