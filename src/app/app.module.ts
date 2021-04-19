@@ -11,11 +11,13 @@ import {BrowserModule} from '@angular/platform-browser';
 import { WorkExperienceContentComponent } from './content/work-experience-content/work-experience-content.component';
 import { WorkExperienceDetailComponent } from './content/work-experience-content/detail/work-experience-detail.component';
 import {WorkExperienceHeaderComponent} from './content/work-experience-content/header/work-experience-header.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   imports: [
     BrowserModule,
-    SharedModule
+    SharedModule,
+    AppRoutingModule
   ],
   declarations: [
     AppComponent,
