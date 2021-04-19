@@ -1,6 +1,4 @@
-import { AfterViewInit, Component, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
-import { NodeBodyService } from './node-body.service';
-import { DummyComponent } from '../../../dummy/dummy.component';
+import { AfterViewInit, Component, ViewChild, ViewContainerRef } from '@angular/core';
 
 @Component({
   selector: 'app-node-body',
@@ -22,7 +20,7 @@ export class NodeBodyComponent implements AfterViewInit {
 
   @ViewChild('container', { read: ViewContainerRef, static: false }) viewRef;
   
-  constructor(private nodeBodyService: NodeBodyService) { }
+  constructor() { }
 
   ngAfterViewInit(): void {
     // this.nodeBodyService.createDynamicComponent(DummyComponent, this.viewRef);

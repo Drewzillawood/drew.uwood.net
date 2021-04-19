@@ -7,7 +7,6 @@ export class Coordinates {
 
 export interface State {
   id: number;
-  coordinates: Coordinates;
-  head?: State;
-  body?: State | State[];
+  head: Coordinates;
+  body: Coordinates;
 }

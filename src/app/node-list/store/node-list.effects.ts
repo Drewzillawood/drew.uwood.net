@@ -10,11 +10,21 @@ import * as NodeListActions from './node-list.actions';
 @Injectable()
 export class NodeListEffects {
   
-  addNode$ = createEffect(
+  addHead$ = createEffect(
     () => this.actions$.pipe(
-      ofType(NodeActions.INITIALIZE),
+      ofType(NodeActions.ADD_HEAD),
       tap((action) => {
         this.store.dispatch(NodeListActions.addNode(action));
+      })
+    ),
+    { dispatch: false }
+  );
+  
+  addBody$ = createEffect(
+    () => this.actions$.pipe(
+      ofType(NodeActions.ADD_BODY),
+      tap((action) => {
+        // this.store.dispatch(NodeListActions.(action));
       })
     ),
     { dispatch: false }

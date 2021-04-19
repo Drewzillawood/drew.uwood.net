@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ViewChild, ViewContainerRef } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { NodeService } from '../node.service';
+
+import * as NodeActions from '../store/node.actions';
 
 @Component({
   selector: 'app-node-head',
@@ -15,10 +19,18 @@ import { Component, OnInit } from '@angular/core';
   `,
   styleUrls: ['./node-head.component.scss']
 })
-export class NodeHeadComponent implements OnInit {
+export class NodeHeadComponent implements AfterViewInit {
 
-  constructor() { }
-
-  ngOnInit(): void {
+  @ViewChild('circle', { read: ViewContainerRef, static: false }) circle;
+  
+  constructor(
+    private store: Store,
+    private nodeService: NodeService
+  ) { }
+  
+  ngAfterViewInit(): void {
+    this.store.dispatch(NodeActions.addHead({
+      coordinates: this.nodeService.constructCoordinatesFromRect(this.circle.getBoundingClientRect())
+    }));
   }
 }
