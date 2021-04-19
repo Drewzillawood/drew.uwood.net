@@ -9,7 +9,6 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { NodeListModule } from './node-list/node-list.module';
 import { NodeListEffects } from './node-list/store/node-list.effects';
-import { DummyComponent } from './dummy/dummy.component';
 
 @NgModule({
   imports: [
@@ -20,8 +19,7 @@ import { DummyComponent } from './dummy/dummy.component';
     StoreDevtoolsModule.instrument({ logOnly: environment.production }),
   ],
   declarations: [
-    AppComponent,
-    DummyComponent
+    AppComponent
   ],
   providers: [
 

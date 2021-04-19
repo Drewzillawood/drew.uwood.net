@@ -1,9 +1,15 @@
 import { createAction, props } from '@ngrx/store';
 import { Coordinates } from './node.index';
 
-export const INITIALIZE = '[Node] Initialize';
+export const ADD_HEAD = '[Node] Add Head';
+export const ADD_BODY = '[Node] Add Body';
 
-export const initialize = createAction(
-  INITIALIZE,
+export const addHead = createAction(
+  ADD_HEAD,
+  props<{ coordinates: Coordinates }>()
+);
+
+export const addBody = createAction(
+  ADD_BODY,
   props<{ coordinates: Coordinates }>()
 );

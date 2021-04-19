@@ -5,15 +5,22 @@ import * as NodeActions from './node.actions';
 
 const initialState: fromNode.State = {
   id: null,
-  coordinates: null
+  head: null,
+  body: null
 };
 
 export const nodeReducer = createReducer(
   initialState,
-  on(NodeActions.initialize, (state: fromNode.State, action) => {
+  on(NodeActions.addHead, (state: fromNode.State, action) => {
     return {
       ...state,
-      coordinates: action.coordinates
+      head: action.coordinates
+    };
+  }),
+  on(NodeActions.addBody, (state: fromNode.State, action) => {
+    return {
+      ...state,
+      head: action.coordinates
     };
   })
 );
