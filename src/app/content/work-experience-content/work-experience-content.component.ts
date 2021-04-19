@@ -13,7 +13,7 @@ export class WorkExperienceContentComponent {
     {
       company: {
         name: 'J&P Cycles',
-        imagePath: 'assets/img/j-and-p-cycles.png'
+        imagePath: '/assets/img/j-and-p-cycles.png'
       },
       title: 'Software Engineer I',
       tenure: 'November 2019 - Present',
@@ -28,7 +28,7 @@ export class WorkExperienceContentComponent {
     {
       company: {
         name: 'NISC (National Information Solutions Cooperative)',
-        imagePath: 'assets/img/NISC_Logo.png'
+        imagePath: '/assets/img/NISC_Logo.png'
       },
       title: 'Software Associate',
       tenure: 'May 2018 - October 2019',
@@ -44,7 +44,7 @@ export class WorkExperienceContentComponent {
     {
       company: {
         name: 'Iowa State University',
-        imagePath: 'assets/img/Iowa_State_Cyclones_logo.svg.png'
+        imagePath: '/assets/img/Iowa_State_Cyclones_logo.svg.png'
       },
       title: 'Com S 227 Teaching Assistant',
       tenure: 'January 2017 - May 2018',
