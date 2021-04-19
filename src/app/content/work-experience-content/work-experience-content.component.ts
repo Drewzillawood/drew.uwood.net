@@ -18,7 +18,11 @@ export class WorkExperienceContentComponent {
       title: 'Software Engineer I',
       tenure: 'November 2019 - Present',
       responsibilities: [
-
+        'Support and develop software engineers (junior-to-senior level) by providing advice, coaching.',
+        'Be an active participant in strategic planning discussions with technical and non-technical stakeholders',
+        'Provide technical direction for solutions of complex problems while staying consistent with overall solution architecture.',
+        'Understand who our customers are and the ability to propose and architect solutions to meet their needs.',
+        'Have the ability to take high-level system initiatives and decompose them into workable user stories for the team to work on.'
       ]
     },
     {
