@@ -13,7 +13,7 @@ export class WorkExperienceContentComponent {
     {
       company: {
         name: 'J&P Cycles',
-        imagePath: '/assets/j-and-p-cycles.png'
+        imagePath: '/assets/j_and_p_cycles.svg.png'
       },
       title: 'Software Engineer I',
       tenure: 'November 2019 - Present',
@@ -28,7 +28,7 @@ export class WorkExperienceContentComponent {
     {
       company: {
         name: 'NISC (National Information Solutions Cooperative)',
-        imagePath: '/assets/NISC_Logo.png'
+        imagePath: '/assets/NISC_Logo.svg.png'
       },
       title: 'Software Associate',
       tenure: 'May 2018 - October 2019',
