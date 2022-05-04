@@ -29,8 +29,8 @@ export class WorkExperienceContentComponent {
         name: 'J&P Cycles',
         imagePath: 'assets/comoto.png'
       },
-      title: 'Software Engineer I',
-      tenure: 'November 2019 - January 2022',
+      title: 'Software Engineer I & II',
+      tenure: 'Nov \'19 - Jul \'21, Jul \'21 - Jan \'22',
       responsibilities: [
         'Support and develop software engineers (junior-to-senior level) by providing advice, coaching.',
         'Be an active participant in strategic planning discussions with technical and non-technical stakeholders',
