@@ -12,11 +12,25 @@ export class WorkExperienceContentComponent {
   contents: WorkExperienceContentModel[] = [
     {
       company: {
+        name: 'J.P.Morgan Chase',
+        imagePath: 'assets/jpmorgan.png'
+      },
+      title: 'Software Associate, Java Developer Engineer',
+      tenure: 'January 2022 - Present',
+      responsibilities: [
+        'Release Management of products into UAT (Test) and Production environments',
+        'Develop and improve upon existing release management procedures including branch semantics and merge/rebase best practices',
+        'Migrate applications from legacy build/deployment tools to modern equivalents',
+        'Acquire AWS Certification'
+      ]
+    },
+    {
+      company: {
         name: 'J&P Cycles',
         imagePath: 'assets/comoto.png'
       },
       title: 'Software Engineer I',
-      tenure: 'November 2019 - Present',
+      tenure: 'November 2019 - January 2022',
       responsibilities: [
         'Support and develop software engineers (junior-to-senior level) by providing advice, coaching.',
         'Be an active participant in strategic planning discussions with technical and non-technical stakeholders',
