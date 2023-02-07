@@ -38,11 +38,11 @@ export class WorkExperienceContentComponent {
       title: 'Software Engineer II | May 2021 - January 2022',
       tenure: 'Software Engineer I | November 2019 - May 2021',
       responsibilities: [
-        'Support and develop software engineers (junior-to-senior level) by providing advice, coaching.',
+        'Support and mentor software engineers (junior-to-senior level) by providing advice, coaching',
         'Be an active participant in strategic planning discussions with technical and non-technical stakeholders',
-        'Provide technical direction for solutions of complex problems while staying consistent with overall solution architecture.',
-        'Understand who our customers are and the ability to propose and architect solutions to meet their needs.',
-        'Have the ability to take high-level system initiatives and decompose them into workable user stories for the team to work on.'
+        'Provide technical direction for solutions of complex problems while staying consistent with overall solution architecture',
+        'Understand who our customers are and the ability to propose and architect solutions to meet their needs',
+        'Have the ability to take high-level system initiatives and decompose them into workable user stories for the team to work on'
       ]
     },
     {
@@ -53,12 +53,12 @@ export class WorkExperienceContentComponent {
       title: 'Software Associate',
       tenure: 'May 2018 - October 2019',
       responsibilities: [
-        'Worked with a team of six utilizing the GWT framework, used Java, RESTful API, and SQL to deploy end-to-end features for our CSR-Portal website.',
-        'Maintained and updated our backend, which was written in Java, to submit and retrieve JSON objects interpreted either through an Enterprise BEAN or a ResultSet.',
-        'Seamlessly checked in code to the single branch of our Java backend after critical peer review and extensive JUnit testing.',
-        'Managed sensitive timing of code commits to respect server side and client side compatibility between releases.',
-        'Monitored backend, micro-services, and front end for necessary revision updates to Spring and/or ANT builds and configuration files.',
-        'Dynamically handled project demands outside of standalone projects. Integrated micro-services locally into front end project to accurately and quickly identify issues.'
+        'Utilized the GWT framework, Java, RESTful API, and SQL to deploy end-to-end features',
+        'Met strict peer review guidelines and multiple approvals before merging a feature branch to develop',
+        'Managed sensitive timing of code commits to respect server side and client side compatibility between releases',
+        'Monitored backend, micro-services, and front end for necessary revision updates to Spring and/or ANT builds and configuration files',
+        'Dynamically handled project demands outside of standalone projects',
+        'Integrated micro-services locally into front end project to accurately and quickly identify issues'
       ]
     },
     {
