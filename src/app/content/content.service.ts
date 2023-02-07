@@ -37,7 +37,7 @@ export class ContentService {
     {
       header: 'References',
       content: [
-        'Jacob Bushlack, J&P Cycles Coworker & Mentee – linkedin.com/in/jakebushlack/',
+        'Jacob Bushlack, J&P Cycles Coworker & Mentee – (319) 432 – 3735',
         'Ed Merriman, J&P Cycles/Revzilla Coworker & Mentor – (609) 330 – 3116'
       ]
     }
