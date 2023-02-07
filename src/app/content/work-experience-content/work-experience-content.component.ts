@@ -12,11 +12,31 @@ export class WorkExperienceContentComponent {
   contents: WorkExperienceContentModel[] = [
     {
       company: {
+        name: 'JP Morgan Chase',
+        imagePath: 'assets/jp_morgan_chase_and_co.png'
+      },
+      title: 'Software Associate, Java Developer',
+      tenure: 'January 2022 - Present',
+      responsibilities: [
+        'Server-side Java programming in Tomcat environment',
+        'Strong understanding and hands-on experience with spring framework, Java core programming and it’s API’s.',
+        'Developing Micro Services hosted on cloud.',
+        'Various modern technology, Kafka, NOSQL databases, Big data technologies',
+        'Hands on experience with Spring framework',
+        'Strong experience with Design models, DDD model and microservices implementation',
+        'Strong understanding of OOP & SOA principles, design patterns, industry best practices',
+        'TDD, code testability standards, JUnit/Mockito',
+        'Building REST and SOAP web services using Java',
+        'Thorough knowledge of SDLC(Software Development Life Cycle)'
+      ]
+    },
+    {
+      company: {
         name: 'J&P Cycles',
         imagePath: 'assets/comoto.png'
       },
-      title: 'Software Engineer I',
-      tenure: 'November 2019 - Present',
+      title: 'Software Engineer II | May 2021 - January 2022',
+      tenure: 'Software Engineer I | November 2019 - May 2021',
       responsibilities: [
         'Support and develop software engineers (junior-to-senior level) by providing advice, coaching.',
         'Be an active participant in strategic planning discussions with technical and non-technical stakeholders',
